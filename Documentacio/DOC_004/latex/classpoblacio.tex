@@ -1,0 +1,146 @@
+\hypertarget{classpoblacio}{}\section{Referència de la Classe poblacio}
+\label{classpoblacio}\index{poblacio@{poblacio}}
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}{poblacio} ()
+\item 
+void \hyperlink{classpoblacio_a4b276498dce7806435f5da6c0bb1b497}{afegir\+\_\+individu} (const \hyperlink{classindividu}{individu} \&ind)
+\begin{DoxyCompactList}\small\item\em Retorna una poblacio buida. \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}{esta\+\_\+individu} (string nom)
+\begin{DoxyCompactList}\small\item\em Afegim un individu al set pob. \end{DoxyCompactList}\item 
+\hyperlink{main_8cc_a54fb6ab8ec9e9336d208b860dca1513d}{setiterator} \hyperlink{classpoblacio_a79328c3b7f2aae028241a3c3acb27f26}{end} ()
+\begin{DoxyCompactList}\small\item\em Busquem un individu al sistema. \end{DoxyCompactList}\item 
+\hyperlink{main_8cc_a54fb6ab8ec9e9336d208b860dca1513d}{setiterator} \hyperlink{classpoblacio_a6534584e7b9b47c8e1f5f800851daef7}{trobar} (string nom)
+\begin{DoxyCompactList}\small\item\em Usat per a realitzar comparacions. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}{escriure} ()
+\begin{DoxyCompactList}\small\item\em busquem un individu \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a0fbbb44255553f61cf18af398ad92061}{llegir} ()
+\begin{DoxyCompactList}\small\item\em Escribim tots els elements per ordre alfabetic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+
+
+Definició a la línia 9 del fitxer poblacio.\+hh.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\index{poblacio@{poblacio}!poblacio@{poblacio}}
+\index{poblacio@{poblacio}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{poblacio()}{poblacio()}}]{\setlength{\rightskip}{0pt plus 5cm}poblacio\+::poblacio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}{}\label{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}
+
+
+\subsection{Documentació de les Funcions Membre}
+\index{poblacio@{poblacio}!afegir\+\_\+individu@{afegir\+\_\+individu}}
+\index{afegir\+\_\+individu@{afegir\+\_\+individu}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+individu(const individu \&ind)}{afegir_individu(const individu &ind)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::afegir\+\_\+individu (
+\begin{DoxyParamCaption}
+\item[{const {\bf individu} \&}]{ind}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a4b276498dce7806435f5da6c0bb1b497}{}\label{classpoblacio_a4b276498dce7806435f5da6c0bb1b497}
+
+
+Retorna una poblacio buida. 
+
+\begin{DoxyPrecond}{Precondició}
+buit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem una poblacio buida 
+\end{DoxyPostcond}
+\index{poblacio@{poblacio}!esta\+\_\+individu@{esta\+\_\+individu}}
+\index{esta\+\_\+individu@{esta\+\_\+individu}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{esta\+\_\+individu(string nom)}{esta_individu(string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::esta\+\_\+individu (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}{}\label{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}
+
+
+Afegim un individu al set pob. 
+
+\begin{DoxyPrecond}{Precondició}
+El parametre implicit es un individu que no esta a pob 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El parametre implicit esta dintre de pob i pob es mante ordenat 
+\end{DoxyPostcond}
+\index{poblacio@{poblacio}!end@{end}}
+\index{end@{end}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{end()}{end()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf setiterator} poblacio\+::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a79328c3b7f2aae028241a3c3acb27f26}{}\label{classpoblacio_a79328c3b7f2aae028241a3c3acb27f26}
+
+
+Busquem un individu al sistema. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retornem cert si hi ha un individu amb el nom, fals, si no. 
+\end{DoxyPostcond}
+\index{poblacio@{poblacio}!trobar@{trobar}}
+\index{trobar@{trobar}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{trobar(string nom)}{trobar(string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf setiterator} poblacio\+::trobar (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a6534584e7b9b47c8e1f5f800851daef7}{}\label{classpoblacio_a6534584e7b9b47c8e1f5f800851daef7}
+
+
+Usat per a realitzar comparacions. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem l\textquotesingle{}iterador que apunta al final 
+\end{DoxyPostcond}
+\index{poblacio@{poblacio}!escriure@{escriure}}
+\index{escriure@{escriure}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{escriure()}{escriure()}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::escriure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}{}\label{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}
+
+
+busquem un individu 
+
+\begin{DoxyPrecond}{Precondició}
+el p.\+i esta en el set d\textquotesingle{}individus 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem l\textquotesingle{}iterador del nom del p.\+i si hi es 
+\end{DoxyPostcond}
+\index{poblacio@{poblacio}!llegir@{llegir}}
+\index{llegir@{llegir}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{llegir()}{llegir()}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::llegir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a0fbbb44255553f61cf18af398ad92061}{}\label{classpoblacio_a0fbbb44255553f61cf18af398ad92061}
+
+
+Escribim tots els elements per ordre alfabetic. 
+
+\begin{DoxyPrecond}{Precondició}
+Buit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El conjunt queda escrit al canal estandard de sortida per ordre alfabetic 
+\end{DoxyPostcond}
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{poblacio_8hh}{poblacio.\+hh}\end{DoxyCompactItemize}

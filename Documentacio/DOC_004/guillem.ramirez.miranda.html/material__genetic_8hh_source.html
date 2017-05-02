@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Experiments genetics al laboratori: Fitxer de Codi material_genetic.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Experiments genetics al laboratori
+   &#160;<span id="projectnumber">versio 4.5 24-abr-2017</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pàgina&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fitxers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Llista&#160;dels&#160;Fitxers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;Fitxers</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_12c2d30dc94110aa14d096c0881635fa.html">Poblacio</a></li><li class="navelem"><a class="el" href="dir_6599f6ad8a15cb70a2a650fb81fc4e08.html">individu</a></li><li class="navelem"><a class="el" href="dir_321498c0349d33f413b934b064f33dd5.html">material_genetic</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">material_genetic.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="material__genetic_8hh.html">Veure la documentació d'aquest fitxer.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="parell__cromosomes_8hh.html">parell_cromosomes.hh</a>&quot;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="especie_8hh.html">especie.hh</a>&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classmatrerial__genetic.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmatrerial__genetic.html">matrerial_genetic</a>{</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;  vector&lt;parell_cromosomes&gt; cromosomes;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classcromosoma.html">cromosoma</a> x;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classcromosoma.html">cromosoma</a> x_y;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classmatrerial__genetic.html#ad477d416cc4fa1babb97c70f936d92a5">material_genetic</a>();</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <a class="code" href="classparell__cromosomes.html">parell_cromosomes</a> <a class="code" href="classmatrerial__genetic.html#a7dd3b921332743dbe09f8212695cfc04">normal</a>(<span class="keywordtype">int</span> i);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classcromosoma.html">cromosoma</a> <a class="code" href="classmatrerial__genetic.html#a837ea787960ae9a5124b883df81e6fec">sexualx1</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classcromosoma.html">cromosoma</a> <a class="code" href="classmatrerial__genetic.html#a1ac242f8322bf0430102a263c3300cf8">sexualx2</a>();</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="classmatrerial__genetic.html#aa0935cfcdc01fcaf44e90b16661423a0">llegir</a>(Especie&amp;esp);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classmatrerial__genetic.html#a4b2d00c6f920bee84eb8211b7622b2ef">escriure</a>();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="ttc" id="classmatrerial__genetic_html_a7dd3b921332743dbe09f8212695cfc04"><div class="ttname"><a href="classmatrerial__genetic.html#a7dd3b921332743dbe09f8212695cfc04">matrerial_genetic::normal</a></div><div class="ttdeci">parell_cromosomes normal(int i)</div><div class="ttdoc">Constructora del material genetic. </div></div>
+<div class="ttc" id="parell__cromosomes_8hh_html"><div class="ttname"><a href="parell__cromosomes_8hh.html">parell_cromosomes.hh</a></div><div class="ttdoc">Especificació de la clase parell_cromosomes. </div></div>
+<div class="ttc" id="classmatrerial__genetic_html_a837ea787960ae9a5124b883df81e6fec"><div class="ttname"><a href="classmatrerial__genetic.html#a837ea787960ae9a5124b883df81e6fec">matrerial_genetic::sexualx1</a></div><div class="ttdeci">cromosoma sexualx1()</div><div class="ttdoc">Retornem una parella de cromosomes situada a la posicio i dels cromosomes. </div></div>
+<div class="ttc" id="classcromosoma_html"><div class="ttname"><a href="classcromosoma.html">cromosoma</a></div><div class="ttdef"><b>Definition:</b> <a href="cromosoma_8hh_source.html#l00008">cromosoma.hh:8</a></div></div>
+<div class="ttc" id="classmatrerial__genetic_html_aa0935cfcdc01fcaf44e90b16661423a0"><div class="ttname"><a href="classmatrerial__genetic.html#aa0935cfcdc01fcaf44e90b16661423a0">matrerial_genetic::llegir</a></div><div class="ttdeci">llegir(Especie &amp;esp)</div><div class="ttdoc">Retornem el cromosoma sexual 2. </div></div>
+<div class="ttc" id="classmatrerial__genetic_html_a1ac242f8322bf0430102a263c3300cf8"><div class="ttname"><a href="classmatrerial__genetic.html#a1ac242f8322bf0430102a263c3300cf8">matrerial_genetic::sexualx2</a></div><div class="ttdeci">cromosoma sexualx2()</div><div class="ttdoc">Retornem el cromosoma sexual 1. </div></div>
+<div class="ttc" id="classmatrerial__genetic_html"><div class="ttname"><a href="classmatrerial__genetic.html">matrerial_genetic</a></div><div class="ttdef"><b>Definition:</b> <a href="material__genetic_8hh_source.html#l00008">material_genetic.hh:8</a></div></div>
+<div class="ttc" id="classmatrerial__genetic_html_a4b2d00c6f920bee84eb8211b7622b2ef"><div class="ttname"><a href="classmatrerial__genetic.html#a4b2d00c6f920bee84eb8211b7622b2ef">matrerial_genetic::escriure</a></div><div class="ttdeci">escriure()</div><div class="ttdoc">Definim el material genetic de l&amp;#39;individu. </div></div>
+<div class="ttc" id="especie_8hh_html"><div class="ttname"><a href="especie_8hh.html">especie.hh</a></div></div>
+<div class="ttc" id="classmatrerial__genetic_html_ad477d416cc4fa1babb97c70f936d92a5"><div class="ttname"><a href="classmatrerial__genetic.html#ad477d416cc4fa1babb97c70f936d92a5">matrerial_genetic::material_genetic</a></div><div class="ttdeci">material_genetic()</div></div>
+<div class="ttc" id="classparell__cromosomes_html"><div class="ttname"><a href="classparell__cromosomes.html">parell_cromosomes</a></div><div class="ttdef"><b>Definition:</b> <a href="parell__cromosomes_8hh_source.html#l00005">parell_cromosomes.hh:5</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

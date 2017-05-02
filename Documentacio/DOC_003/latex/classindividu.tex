@@ -1,0 +1,262 @@
+\hypertarget{classindividu}{}\section{Referència de la Classe individu}
+\label{classindividu}\index{individu@{individu}}
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classindividu_af1ba9dc86a04bff6b41ed2d1cf3202b9}{individu} ()
+\item 
+\hyperlink{classindividu_a6c431979119a07f4dc2be041d6cf73da}{individu} (\hyperlink{individu_8hh_a32dbccbf05588c8c12b0111d5c5c6eb3}{setiterator} pare, \hyperlink{individu_8hh_a32dbccbf05588c8c12b0111d5c5c6eb3}{setiterator} mare, string nfill)
+\begin{DoxyCompactList}\small\item\em Generem un individu buit. \end{DoxyCompactList}\item 
+void \hyperlink{classindividu_a0ab01155015657b4d6bc9f81972d9fde}{completar\+\_\+arbre} (\hyperlink{class_arbre}{Arbre}$<$ string $>$ arb)
+\begin{DoxyCompactList}\small\item\em Retornem un individu nou, fill del pare i la mare mitjançant la reproducció \end{DoxyCompactList}\item 
+void \hyperlink{classindividu_a3667eea520362bd57b5d0bce7510ecc2}{escriure\+\_\+arbe} ()
+\begin{DoxyCompactList}\small\item\em Comprovem que un arbre es subarbre de l\textquotesingle{}arbre geneologic del individu. \end{DoxyCompactList}\item 
+string \hyperlink{classindividu_a524053921304f914deac29c6baa80e15}{consultar\+\_\+nom} ()
+\begin{DoxyCompactList}\small\item\em Escribim l\textquotesingle{}arbre genologic de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+bool \hyperlink{classindividu_a30ab21dfd66b20a748bcf41e0b3108a0}{consultar\+\_\+sexe} ()
+\begin{DoxyCompactList}\small\item\em Retornem el nom de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+\hyperlink{individu_8hh_a32dbccbf05588c8c12b0111d5c5c6eb3}{setiterator} \hyperlink{classindividu_a6f379a03c06d9c39c47b20fa4b1a899b}{pare} ()
+\begin{DoxyCompactList}\small\item\em Retornem el sexe de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+\hyperlink{individu_8hh_a32dbccbf05588c8c12b0111d5c5c6eb3}{setiterator} \hyperlink{classindividu_a8f1a09977b42f186fae0955ce7ef683e}{mare} ()
+\begin{DoxyCompactList}\small\item\em Retornem l\textquotesingle{}iterador al pare de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+material\+\_\+genetic \hyperlink{classindividu_a89c30a9e1a39e5860f4c9cd421b033d7}{material} ()
+\begin{DoxyCompactList}\small\item\em Retornem l\textquotesingle{}iterador a la mare de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+void \hyperlink{classindividu_a309eb865a39352302fd8d97cf67584bb}{llegir} (Especie \&esp)
+\begin{DoxyCompactList}\small\item\em Retornem el material genetic de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+void \hyperlink{classindividu_a88659e52840409422fc354b513ca03a8}{escriure} ()
+\begin{DoxyCompactList}\small\item\em Llegim un individu. \end{DoxyCompactList}\item 
+bool \hyperlink{classindividu_aaea7fcb4f4fbb4f1415ad6106956627d}{operator$<$} (const \hyperlink{classindividu}{individu} \&b)
+\begin{DoxyCompactList}\small\item\em Escribim la informacio de l\textquotesingle{}individu. \end{DoxyCompactList}\item 
+bool \hyperlink{classindividu_aca6c8ae3ac8b3db283f800dbde0d4eb4}{operator==} (const \hyperlink{classindividu}{individu} \&i)
+\begin{DoxyCompactList}\small\item\em Operador necesari per a la ordenació del set d\textquotesingle{}individus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+
+
+Definició a la línia 13 del fitxer individu.\+hh.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\index{individu@{individu}!individu@{individu}}
+\index{individu@{individu}!individu@{individu}}
+\subsubsection[{\texorpdfstring{individu()}{individu()}}]{\setlength{\rightskip}{0pt plus 5cm}individu\+::individu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_af1ba9dc86a04bff6b41ed2d1cf3202b9}{}\label{classindividu_af1ba9dc86a04bff6b41ed2d1cf3202b9}
+\index{individu@{individu}!individu@{individu}}
+\index{individu@{individu}!individu@{individu}}
+\subsubsection[{\texorpdfstring{individu(setiterator pare, setiterator mare, string nfill)}{individu(setiterator pare, setiterator mare, string nfill)}}]{\setlength{\rightskip}{0pt plus 5cm}individu\+::individu (
+\begin{DoxyParamCaption}
+\item[{{\bf setiterator}}]{pare, }
+\item[{{\bf setiterator}}]{mare, }
+\item[{string}]{nfill}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a6c431979119a07f4dc2be041d6cf73da}{}\label{classindividu_a6c431979119a07f4dc2be041d6cf73da}
+
+
+Generem un individu buit. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem un individu buit 
+\end{DoxyPostcond}
+
+
+\subsection{Documentació de les Funcions Membre}
+\index{individu@{individu}!completar\+\_\+arbre@{completar\+\_\+arbre}}
+\index{completar\+\_\+arbre@{completar\+\_\+arbre}!individu@{individu}}
+\subsubsection[{\texorpdfstring{completar\+\_\+arbre(\+Arbre$<$ string $>$ arb)}{completar_arbre(Arbre< string > arb)}}]{\setlength{\rightskip}{0pt plus 5cm}void individu\+::completar\+\_\+arbre (
+\begin{DoxyParamCaption}
+\item[{{\bf Arbre}$<$ string $>$}]{arb}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a0ab01155015657b4d6bc9f81972d9fde}{}\label{classindividu_a0ab01155015657b4d6bc9f81972d9fde}
+
+
+Retornem un individu nou, fill del pare i la mare mitjançant la reproducció 
+
+\begin{DoxyPrecond}{Precondició}
+Al P.\+I estan el pare, la mare i el nom del fill (on pare XY, mare XX) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem un individu nou mitjançant la reproduccio 
+\end{DoxyPostcond}
+\index{individu@{individu}!escriure\+\_\+arbe@{escriure\+\_\+arbe}}
+\index{escriure\+\_\+arbe@{escriure\+\_\+arbe}!individu@{individu}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+arbe()}{escriure_arbe()}}]{\setlength{\rightskip}{0pt plus 5cm}void individu\+::escriure\+\_\+arbe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a3667eea520362bd57b5d0bce7510ecc2}{}\label{classindividu_a3667eea520362bd57b5d0bce7510ecc2}
+
+
+Comprovem que un arbre es subarbre de l\textquotesingle{}arbre geneologic del individu. 
+
+\begin{DoxyPrecond}{Precondició}
+arb es un arbre 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+s\textquotesingle{}han escrit al canal estandard de sortida si arb es subarbre dels arbre geneologic del individu 
+\end{DoxyPostcond}
+\index{individu@{individu}!consultar\+\_\+nom@{consultar\+\_\+nom}}
+\index{consultar\+\_\+nom@{consultar\+\_\+nom}!individu@{individu}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+nom()}{consultar_nom()}}]{\setlength{\rightskip}{0pt plus 5cm}string individu\+::consultar\+\_\+nom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a524053921304f914deac29c6baa80e15}{}\label{classindividu_a524053921304f914deac29c6baa80e15}
+
+
+Escribim l\textquotesingle{}arbre genologic de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Escribim l\textquotesingle{}arbre geneologic de l\textquotesingle{}individu al canal estandard d\textquotesingle{}entrada 
+\end{DoxyPostcond}
+\index{individu@{individu}!consultar\+\_\+sexe@{consultar\+\_\+sexe}}
+\index{consultar\+\_\+sexe@{consultar\+\_\+sexe}!individu@{individu}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+sexe()}{consultar_sexe()}}]{\setlength{\rightskip}{0pt plus 5cm}bool individu\+::consultar\+\_\+sexe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a30ab21dfd66b20a748bcf41e0b3108a0}{}\label{classindividu_a30ab21dfd66b20a748bcf41e0b3108a0}
+
+
+Retornem el nom de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem en un string el nom de l\textquotesingle{}individu 
+\end{DoxyPostcond}
+\index{individu@{individu}!pare@{pare}}
+\index{pare@{pare}!individu@{individu}}
+\subsubsection[{\texorpdfstring{pare()}{pare()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf setiterator} individu\+::pare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a6f379a03c06d9c39c47b20fa4b1a899b}{}\label{classindividu_a6f379a03c06d9c39c47b20fa4b1a899b}
+
+
+Retornem el sexe de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem cert si dona, fals si home. 
+\end{DoxyPostcond}
+\index{individu@{individu}!mare@{mare}}
+\index{mare@{mare}!individu@{individu}}
+\subsubsection[{\texorpdfstring{mare()}{mare()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf setiterator} individu\+::mare (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a8f1a09977b42f186fae0955ce7ef683e}{}\label{classindividu_a8f1a09977b42f186fae0955ce7ef683e}
+
+
+Retornem l\textquotesingle{}iterador al pare de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat l\textquotesingle{}iterador que apunta al pare de l\textquotesingle{}individu 
+\end{DoxyPostcond}
+\index{individu@{individu}!material@{material}}
+\index{material@{material}!individu@{individu}}
+\subsubsection[{\texorpdfstring{material()}{material()}}]{\setlength{\rightskip}{0pt plus 5cm}material\+\_\+genetic individu\+::material (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a89c30a9e1a39e5860f4c9cd421b033d7}{}\label{classindividu_a89c30a9e1a39e5860f4c9cd421b033d7}
+
+
+Retornem l\textquotesingle{}iterador a la mare de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha retornat l\textquotesingle{}iterador que apunta a la mare de l\textquotesingle{}individu 
+\end{DoxyPostcond}
+\index{individu@{individu}!llegir@{llegir}}
+\index{llegir@{llegir}!individu@{individu}}
+\subsubsection[{\texorpdfstring{llegir(\+Especie \&esp)}{llegir(Especie &esp)}}]{\setlength{\rightskip}{0pt plus 5cm}void individu\+::llegir (
+\begin{DoxyParamCaption}
+\item[{Especie \&}]{esp}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a309eb865a39352302fd8d97cf67584bb}{}\label{classindividu_a309eb865a39352302fd8d97cf67584bb}
+
+
+Retornem el material genetic de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem el material genetic 
+\end{DoxyPostcond}
+\index{individu@{individu}!escriure@{escriure}}
+\index{escriure@{escriure}!individu@{individu}}
+\subsubsection[{\texorpdfstring{escriure()}{escriure()}}]{\setlength{\rightskip}{0pt plus 5cm}void individu\+::escriure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_a88659e52840409422fc354b513ca03a8}{}\label{classindividu_a88659e52840409422fc354b513ca03a8}
+
+
+Llegim un individu. 
+
+\begin{DoxyPrecond}{Precondició}
+Al canal estandard d\textquotesingle{}entrada tenim les dades de un individu, l\textquotesingle{}individu es buit 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Assignem els valors que rebem al individus 
+\end{DoxyPostcond}
+\index{individu@{individu}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!individu@{individu}}
+\subsubsection[{\texorpdfstring{operator$<$(const individu \&b)}{operator<(const individu &b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool individu\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf individu} \&}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_aaea7fcb4f4fbb4f1415ad6106956627d}{}\label{classindividu_aaea7fcb4f4fbb4f1415ad6106956627d}
+
+
+Escribim la informacio de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondició}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+S\textquotesingle{}ha escrit la informacio de l\textquotesingle{}individu al canal estandard de sortida 
+\end{DoxyPostcond}
+\index{individu@{individu}!operator==@{operator==}}
+\index{operator==@{operator==}!individu@{individu}}
+\subsubsection[{\texorpdfstring{operator==(const individu \&i)}{operator==(const individu &i)}}]{\setlength{\rightskip}{0pt plus 5cm}bool individu\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf individu} \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{classindividu_aca6c8ae3ac8b3db283f800dbde0d4eb4}{}\label{classindividu_aca6c8ae3ac8b3db283f800dbde0d4eb4}
+
+
+Operador necesari per a la ordenació del set d\textquotesingle{}individus. 
+
+\begin{DoxyPrecond}{Precondició}
+els individus tenen nom 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+retorna si el nom de l\textquotesingle{}individu es menor un que l\textquotesingle{}altre 
+\end{DoxyPostcond}
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir del següent fitxer\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{individu_8hh}{individu.\+hh}\end{DoxyCompactItemize}

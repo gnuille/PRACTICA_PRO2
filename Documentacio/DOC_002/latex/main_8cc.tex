@@ -1,0 +1,76 @@
+\hypertarget{main_8cc}{}\section{Referència del Fitxer main.\+cc}
+\label{main_8cc}\index{main.\+cc@{main.\+cc}}
+Inclou el graf de dependències per a main.\+cc\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{main_8cc__incl}
+\end{center}
+\end{figure}
+\subsection*{Funcions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Documentació de les Funcions}
+\index{main.\+cc@{main.\+cc}!main@{main}}
+\index{main@{main}!main.\+cc@{main.\+cc}}
+\subsubsection[{\texorpdfstring{main()}{main()}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\label{main_8cc_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definició a la línia 7 del fitxer main.\+cc.
+
+
+\begin{DoxyCode}
+7           \{
+8     
+9     definir();
+10     \hyperlink{classpoblacio}{poblacio} p;
+11     p.\hyperlink{classpoblacio_a0fbbb44255553f61cf18af398ad92061}{llegir}();
+12     \textcolor{keywordtype}{int} op;
+13     cin>>op;
+14     \textcolor{keywordflow}{while}(op!=7)\{
+15         \textcolor{keywordflow}{switch} (op) \{
+16             \textcolor{keywordflow}{case} 1:
+17                 \hyperlink{classindividu}{individu} in;
+18                 in.\hyperlink{classindividu_a48da0b7cc9612b7854668377b591fdd7}{llegir}();
+19                 p.\hyperlink{classpoblacio_af65ac83de2f5ac5a9b72895064ff790c}{afegir\_individu}(in);
+20                 \textcolor{keywordflow}{break};
+21             \textcolor{keywordflow}{case} 2:
+22                 \hyperlink{classindividu}{individu} ma = p.\hyperlink{classpoblacio_aed7864e5f24d20e68c29cc74eef42935}{buscar}(mare);
+23                 \hyperlink{classindividu}{individu} pa = p.\hyperlink{classpoblacio_aed7864e5f24d20e68c29cc74eef42935}{buscar}(pare);
+24                 \textcolor{keywordtype}{string} fill;
+25                 cin>>fill;
+26                 \hyperlink{classindividu}{individu} fi(pa, ma, fill);
+27                 p.\hyperlink{classpoblacio_af65ac83de2f5ac5a9b72895064ff790c}{afegir\_individu}(fi);
+28                 \textcolor{keywordflow}{break};
+29             \textcolor{keywordflow}{case} 3:
+30                 \hyperlink{classindividu}{individu} in = p.\hyperlink{classpoblacio_aed7864e5f24d20e68c29cc74eef42935}{buscar}();
+31                 in.\hyperlink{classindividu_ab65a6fb5fabbddcedfc56fb70efdbe55}{familia}();
+32                 \textcolor{keywordflow}{break};
+33             \textcolor{keywordflow}{case} 4:
+34                 Arbre arb;
+35                 arb.llegir();
+36                 \hyperlink{classindividu}{individu} in = p.\hyperlink{classpoblacio_aed7864e5f24d20e68c29cc74eef42935}{buscar}();
+37                 in.\hyperlink{classindividu_afe94f6bc70378a3b7607e99bd4b260f2}{comprovararbre}(arb);
+38                 \textcolor{keywordflow}{break};
+39             \textcolor{keywordflow}{case} 5:
+40                 p.\hyperlink{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}{escriure}();
+41                 \textcolor{keywordflow}{break};
+42             \textcolor{keywordflow}{case} 6:
+43                 \hyperlink{classindividu}{individu} in = p.\hyperlink{classpoblacio_aed7864e5f24d20e68c29cc74eef42935}{buscar}();
+44                 in.\hyperlink{classindividu_a88659e52840409422fc354b513ca03a8}{escriure}()
+45                 \textcolor{keywordflow}{break};
+46             \}
+47             cin>>op;
+48 
+49         \}
+50     \}
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Experimentos geneticos.: Fitxer de Codi individu.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Experimentos geneticos.
+   &#160;<span id="projectnumber">Versio 1.0</span>
+   </div>
+   <div id="projectbrief">Practica de l&#39;asignatura de programació 2.</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generat per Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Cerca');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Pàgina&#160;principal</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fitxers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Cerca" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Llista&#160;dels&#160;Fitxers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">individu.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Arbre.hh&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;individu.cc&quot;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include&lt;vector&gt;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="classindividu.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="classindividu.html">individu</a>{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> N;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> li;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> lx;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> ly;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">string</span> nom;</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classindividu.html#aef8e17be688e7e31270d5207aa008587">sexe</a>;</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    vector&lt;par&gt; adn(N*li);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    vector&lt;int&gt; sexuals(lx*2);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Arbre&lt;string&gt; geneologic;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> definir(<span class="keywordtype">int</span> N, <span class="keywordtype">int</span> li, <span class="keywordtype">int</span> lx, <span class="keywordtype">int</span> ly);</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classindividu.html#af1ba9dc86a04bff6b41ed2d1cf3202b9">individu</a>();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classindividu.html#af1ba9dc86a04bff6b41ed2d1cf3202b9">individu</a>(<a class="code" href="classindividu.html">individu</a> pare, <a class="code" href="classindividu.html">individu</a> mare, <span class="keywordtype">string</span> nfill);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#afe94f6bc70378a3b7607e99bd4b260f2">comprovararbre</a>(Arbre&lt;string&gt; arb);</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#a25a2d30b548c13a92bb2cbeacebc722c">consultarnom</a>();</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#aef8e17be688e7e31270d5207aa008587">sexe</a>();</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#ad7b6f532a96228f4ba7b9a948d7051c9">pares</a>();</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#a48da0b7cc9612b7854668377b591fdd7">llegir</a>();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#ab65a6fb5fabbddcedfc56fb70efdbe55">familia</a>();</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classindividu.html#a88659e52840409422fc354b513ca03a8">escriure</a>();</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div><div class="ttc" id="classindividu_html_ab65a6fb5fabbddcedfc56fb70efdbe55"><div class="ttname"><a href="classindividu.html#ab65a6fb5fabbddcedfc56fb70efdbe55">individu::familia</a></div><div class="ttdeci">void familia()</div><div class="ttdoc">Llegim un individu. </div></div>
+<div class="ttc" id="classindividu_html_aef8e17be688e7e31270d5207aa008587"><div class="ttname"><a href="classindividu.html#aef8e17be688e7e31270d5207aa008587">individu::sexe</a></div><div class="ttdeci">void sexe()</div><div class="ttdoc">Escribim el nom de l&amp;#39;individu. </div></div>
+<div class="ttc" id="classindividu_html"><div class="ttname"><a href="classindividu.html">individu</a></div><div class="ttdef"><b>Definition:</b> individu.hh:6</div></div>
+<div class="ttc" id="classindividu_html_a25a2d30b548c13a92bb2cbeacebc722c"><div class="ttname"><a href="classindividu.html#a25a2d30b548c13a92bb2cbeacebc722c">individu::consultarnom</a></div><div class="ttdeci">void consultarnom()</div><div class="ttdoc">Comprovem que un arbre es subarbre de l&amp;#39;arbre geneologic del individu. </div></div>
+<div class="ttc" id="classindividu_html_ad7b6f532a96228f4ba7b9a948d7051c9"><div class="ttname"><a href="classindividu.html#ad7b6f532a96228f4ba7b9a948d7051c9">individu::pares</a></div><div class="ttdeci">void pares()</div><div class="ttdoc">Escribim el sexe de l&amp;#39;individu. </div></div>
+<div class="ttc" id="classindividu_html_a88659e52840409422fc354b513ca03a8"><div class="ttname"><a href="classindividu.html#a88659e52840409422fc354b513ca03a8">individu::escriure</a></div><div class="ttdeci">void escriure()</div><div class="ttdoc">Escribim la familia de l&amp;#39;individu. </div></div>
+<div class="ttc" id="classindividu_html_a48da0b7cc9612b7854668377b591fdd7"><div class="ttname"><a href="classindividu.html#a48da0b7cc9612b7854668377b591fdd7">individu::llegir</a></div><div class="ttdeci">void llegir()</div><div class="ttdoc">Escribim els pares de l&amp;#39;individu. </div></div>
+<div class="ttc" id="classindividu_html_af1ba9dc86a04bff6b41ed2d1cf3202b9"><div class="ttname"><a href="classindividu.html#af1ba9dc86a04bff6b41ed2d1cf3202b9">individu::individu</a></div><div class="ttdeci">individu()</div><div class="ttdoc">Definim els parametres de la especie per a tots els individus. </div></div>
+<div class="ttc" id="classindividu_html_afe94f6bc70378a3b7607e99bd4b260f2"><div class="ttname"><a href="classindividu.html#afe94f6bc70378a3b7607e99bd4b260f2">individu::comprovararbre</a></div><div class="ttdeci">void comprovararbre(Arbre&lt; string &gt; arb)</div><div class="ttdoc">Retornem un individu nou, fill del pare i la mare mitjançant la reproducció </div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generat per &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
