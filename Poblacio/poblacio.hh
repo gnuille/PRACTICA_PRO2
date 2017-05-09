@@ -42,10 +42,14 @@ public:
     */
     void escriure();
     /** @brief Escribim tots els elements per ordre alfabetic
-        \pre Buit
+        \pre Cert
         \post El conjunt queda escrit al canal estandard de sortida per ordre alfabetic
     */
-
+	bool son_antecesors(string a, string b);
+	/** @brief Busquem si els elements son antecesors
+        \pre a i b son noms d'individus dintre del sistea
+        \post Retornem cert si a es antecesor de b o b es antecesor de a, fals eb altres casos
+    */
     void llegir();
     /** @brief Llegim una població inicial
         \pre El conjunt es buit, rebem una M i seguidament la informació de M individus

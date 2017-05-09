@@ -17,7 +17,36 @@ bool poblacio::esta_individu(string nom){
 }
 
 void poblacio::reproduir(string pare, string mare, string fill){
+    mapiterator dad, mum, son;
+    dad = pob.find(pare);
+    mum = pob.find(mare);
+    son = pob.find(fill);
+    if(dad == pob.end() or mum == pob.end() or son != pob.end()) cout<<"error"<<endl;
+    else{
+        bool reproduccion;
+        reproduccion = !(*dad).second.in.consultar_sexe() or (*mum).second.in.consultar_sexe()
+        if(reproduccion){
+            string aviam, avim, aviap, avip;
+            aviam = *((*mum).second.mare).first;
+            aviap = *((*dad).second.mare).first;
+            avim = *((*mum).second.pare).first;
+            avip = *((*dad).second.pare).first;
+            reproduccion = !((aviam == aviap) or (avim = avip));
 
+        }
+
+        if(reproduccion) reproduccion = !son_antecesors(pare, mare);
+        if(!reproduccion) cout<<"no es posible reproduccion"<<endl;
+        else{
+            individu hijo((*dad).second.in,(*mum).second.in);
+            familia fam;
+            fam.in = hijo;
+            fam.pare = dad;
+            fam.mare = mum;
+            pob.insert(pair<string, familia>(fill, fam));
+        }
+
+    }
 }
 
 void poblacio::escriure(){
@@ -45,4 +74,8 @@ void poblacio::llegir(){
         in.llegir();
         (*this).afegir_individu(nom, in);
     }
+}
+
+bool poblacio::son_antecesors(string a, string b){
+    return "bona tarda" == "hola"
 }
