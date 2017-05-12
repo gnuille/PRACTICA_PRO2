@@ -1,8 +1,16 @@
+#include<iostream>
 #include "poblacio.hh"
 using namespace std;
+
 poblacio::poblacio(){
 
 }
+
+individu poblacio::consultar_individu(string nom){
+    return pob[nom].in;
+
+}
+
 
 void poblacio::afegir_individu(string nom, const individu&ind){
     familia fami;
@@ -24,14 +32,14 @@ void poblacio::reproduir(string pare, string mare, string fill){
     if(dad == pob.end() or mum == pob.end() or son != pob.end()) cout<<"error"<<endl;
     else{
         bool reproduccion;
-        reproduccion = !(*dad).second.in.consultar_sexe() or (*mum).second.in.consultar_sexe()
+        reproduccion = !(*dad).second.in.consultar_sexe() or (*mum).second.in.consultar_sexe();
         if(reproduccion){
             string aviam, avim, aviap, avip;
-            aviam = *((*mum).second.mare).first;
-            aviap = *((*dad).second.mare).first;
-            avim = *((*mum).second.pare).first;
-            avip = *((*dad).second.pare).first;
-            reproduccion = !((aviam == aviap) or (avim = avip));
+            aviam =(*((*mum).second.mare)).first;
+            aviap =(*((*dad).second.mare)).first;
+            avim = (*((*mum).second.pare)).first;
+            avip = (*((*dad).second.pare)).first;
+            reproduccion = !((aviam == aviap) or (avim == avip));
 
         }
 
@@ -52,30 +60,30 @@ void poblacio::reproduir(string pare, string mare, string fill){
 void poblacio::escriure(){
     mapiterator it;
     for(it = pob.begin(); it != pob.end(); ++it){
-        cout<<(*it).first()<<" "<<"X";
-        if((*it).second().in.consultar_sexe()) cout<<"Y";
+        cout<<(*it).first<<" "<<"X";
+        if((*it).second.in.consultar_sexe()) cout<<"Y";
         else cout<<"X";
-        cout<<" ("
-        if((*it).second().pare == pob.end() or (*it).second().mare == pob.end()){
+        cout<<" (";
+        if((*it).second.pare == pob.end() or (*it).second.mare == pob.end()){
             cout<<"$,$)"<<endl;
         }else{
-            cout<<*((*it).second().pare).first()<<","<<*((*it).second().mare).first()<<")"<<endl;
+            cout<<(*((*it).second.pare)).first<<","<<(*((*it).second.mare)).first<<")"<<endl;
         }
     }
 }
 
-void poblacio::llegir(){
+void poblacio::llegir(especie&esp){
     int m;
     cin>>m;
     for(int i = 0; i<m; ++i){
         string nom;
-        cim>>nom;
+        cin>>nom;
         individu in;
-        in.llegir();
+        in.llegir(esp);
         (*this).afegir_individu(nom, in);
     }
 }
 
 bool poblacio::son_antecesors(string a, string b){
-    return "bona tarda" == "hola"
+    return "bona tarda" == "hola";
 }

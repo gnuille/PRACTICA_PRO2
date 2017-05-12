@@ -1,4 +1,3 @@
-
 #include<vector>
 #include<iostream>
 #include "individu.hh"
@@ -17,8 +16,9 @@ bool individu::consultar_sexe(){
 	return x.size() == x_y.size();
 }
 
-void individu::llegir(const especie&esp){
+void individu::llegir( especie&esp){
 	x = vector<int>(esp.getlx());
+
 	char sexe;
 	cin>>sexe;
 	if(sexe == 'X'){
@@ -57,4 +57,8 @@ void individu::escriure_genotip(){
 		cromosomes[i].escriure_c2();
 	}
 
+}
+
+void individu::escriure_arbre_geneologic(){
+	
 }

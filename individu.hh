@@ -34,7 +34,7 @@ public:
         \pre cert
         \post Retornem cert si dona, fals si home.
     */
-    void llegir(const especie&esp);
+    void llegir(especie&esp);
     /** @brief Llegim un individu
         \pre Al pi tenim una especie. Al canal estandard d'entrada tenim les dades de un individu, l'individu es buit
         \post Assignem els valors que rebem al individus
@@ -44,5 +44,11 @@ public:
     /** @brief Escribim la informacio genetica de l'individu
         \pre cert
         \post S'ha escrit la informacio genetica de l'individu al canal estandard de sortida
+    */
+
+    void escriure_arbre_geneologic();
+    /** @brief Escribim l'arbre geneologic de l'individu 
+        \pre cert
+        \post Ha quedat escrit l'arbre geneologic de l'individu ordenat per nivells
     */
 };

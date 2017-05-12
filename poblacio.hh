@@ -7,17 +7,19 @@
 
 using namespace std;
 
-typedef map<string,familia>::iterator mapiterator;
-
 class poblacio{
 
-private:
-	struct familia{
-		individu in;
-		mapiterator pare;
-		mapiterator mare;
-	}
-    map<string,familia> pob;
+private: 
+    struct familia{
+	individu in;
+        map<string,familia>::iterator  pare;
+        map<string,familia>::iterator  mare;
+    };
+    map<string, familia> pob;
+    typedef map<string,familia>::iterator mapiterator;
+
+	
+
 
 
 public:
@@ -26,6 +28,13 @@ public:
         \pre buit
         \post Retornem una poblacio buida
     */
+    
+
+    individu consultar_individu(string nom);
+    /** @brief Consultem un individu
+	\pre el nom de l'individu esta al map
+	\post retornem l'individu al qual li correspon el nom
+    */	
 
     void afegir_individu(string nom, const individu&ind);
     /** @brief Afegim un individu al map pob
@@ -53,7 +62,7 @@ public:
         \pre a i b son noms d'individus dintre del sistea
         \post Retornem cert si a es antecesor de b o b es antecesor de a, fals eb altres casos
     */
-    void llegir();
+    void llegir(especie&esp);
     /** @brief Llegim una població inicial
         \pre El conjunt es buit, rebem una M i seguidament la informació de M individus
         \post  els M individus queden registrats en al map pob sense pares.
