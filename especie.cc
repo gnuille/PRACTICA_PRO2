@@ -31,7 +31,9 @@ void especie::llegir(){
     cin>>N;
     cin>>l0;
     for(int i = 0; i<N; ++i){
-        cin>>l[i];
+       	int a;
+	cin>>a;
+	l.push_back(a);
     }
     cin>>lx;
     cin>>ly;
