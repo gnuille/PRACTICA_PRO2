@@ -15,6 +15,28 @@ void parell_cromosomes::reproduir(int punt_tall){
 
 }
 
+vector<int> parell_cromosomes::consultar_c1(){
+    return c1;
+}
+/** @brief Retornem el cromosoma c1
+    \pre cert
+    \post retornem el cromosoma c1
+*/
+vector<int> parell_cromosomes::consultar_c2(){
+    return c2;
+}
+/** @brief Retornem el cromosoma c2
+    \pre cert
+    \post retornem el cromosoma c2
+*/
+void parell_cromosomes::tallar(int i){
+  for(int j = i; j<c1.size(); ++j){
+    int aux = c1[j];
+    c1[j] = c2[j];
+    c2[j] = aux;
+
+  }
+}
 void parell_cromosomes::llegir(int tam){
     int inp;
     for(int i = 0; i<tam; ++i){
