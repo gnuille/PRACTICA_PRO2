@@ -26,7 +26,8 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 
 
 			this->cromosomes = vector<parell_cromosomes>(esp.getN());
-			for(int i = 0; (*this).cromosomes.size(); ++i){
+
+			for(int i = 0; i<esp.getN(); ++i){
 				cin>>cm;
 				vector<int> c1;
 				if(cm) c1 = mare.cromosomes[i].consultar_c2();
@@ -41,7 +42,7 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 				cr.tallar(tall);
 				this->cromosomes[i] = cr;
 			}
-
+			
 
 }
 
