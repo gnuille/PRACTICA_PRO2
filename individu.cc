@@ -7,24 +7,39 @@ individu::individu(){
 
 }
 
-individu::individu(const individu&pare, const individu&mare){
-			this->cromosomes = pare.cromosomes;
+individu::individu(const individu&pare, const individu&mare, especie&esp){
 			int cp, cm, tall;
+			cin>>cm>>cp>>tall;
+
+			if(cm) this->x = mare.x_y;
+			else this->x = mare.x;
+
+			if(cp) this->x_y = pare.x_y;
+			else this->x_y = pare.x;
+
+			int limit = esp.getl0();
+			for(int i = tall; i<limit; ++i){
+				this->x[i]^=this->x_y[i];
+				this->x_y[i]^=this->x[i]; //bitwise XOR swap
+				this->x[i]^=this->x_y[i];
+			}
+
+
+			this->cromosomes = vector<parell_cromosomes>(esp.getN());
 			for(int i = 0; (*this).cromosomes.size(); ++i){
 				cin>>cm;
 				vector<int> c1;
-				if(cm) c1 = mare.cromosomes.consultar_c2();
-				else c1 = mare.cromosomes.consultar_c1();
+				if(cm) c1 = mare.cromosomes[i].consultar_c2();
+				else c1 = mare.cromosomes[i].consultar_c1();
 				cin>>cp;
 				vector<int> c2;
-				if(cp) c2 = pare.cromosomes.consultar_c2();
-				else c2 = pare.cromosomes.consultar_c1();
+				if(cp) c2 = pare.cromosomes[i].consultar_c2();
+				else c2 = pare.cromosomes[i].consultar_c1();
 
 				cin>>tall;
 				parell_cromosomes cr(c1, c2);
 				cr.tallar(tall);
-
-				//todo: sexuals;
+				this->cromosomes[i] = cr;
 			}
 
 
@@ -34,7 +49,7 @@ bool individu::consultar_sexe(){
 	return x.size() == x_y.size();
 }
 
-void individu::llegir( especie&esp){
+void individu::llegir(especie&esp){
 	x = vector<int>(esp.getlx());
 
 	char sexe;

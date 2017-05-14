@@ -33,18 +33,17 @@ int main(){
             case addIn:{  //funciona !:)
 		            string name;
 		            cin>>name;
-		            if(pob.esta_individu(name)) cout<<"error"<<endl;
-		            else{
-		                individu in;
-		                in.llegir(esp);
-		                pob.afegir_individu(name, in);
-		           }
-		           break;
+		            individu in;
+		            in.llegir(esp);
+                if(pob.esta_individu(name)) cout<<"error"<<endl;
+		            else pob.afegir_individu(name, in);
+
+		            break;
 	          }
 	          case reproduccion:{
 		            string mare, pare, fil;
 		            cin>>mare>>pare>>fil;
-		            pob.reproduir(pare, mare, fil);
+		            pob.reproduir(pare, mare, fil, esp);
 		            break;
 	          }
     	      case escribir_arbol:{

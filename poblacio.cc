@@ -24,37 +24,44 @@ bool poblacio::esta_individu(string nom){
     return pob.find(nom) != pob.end();
 }
 
-void poblacio::reproduir(string pare, string mare, string fill){
+int poblacio::reproduccio_posible(string pare, string mare, string fill){
     mapiterator dad, mum, son;
     dad = pob.find(pare);
     mum = pob.find(mare);
     son = pob.find(fill);
-    if(dad == pob.end() or mum == pob.end() or son != pob.end()) cout<<"error"<<endl;
-    else{
-        bool reproduccion;
-        reproduccion = !(*dad).second.in.consultar_sexe() or (*mum).second.in.consultar_sexe();
-        if(reproduccion){
-            string aviam, avim, aviap, avip;
-            aviam =(*((*mum).second.mare)).first;
-            aviap =(*((*dad).second.mare)).first;
-            avim = (*((*mum).second.pare)).first;
-            avip = (*((*dad).second.pare)).first;
-            reproduccion = !((aviam == aviap) or (avim == avip));
+    if(dad == pob.end() or mum == pob.end() or son != pob.end()) return 2;
+    if((*dad).second.in.consultar_sexe() or !(*mum).second.in.consultar_sexe()) return 1;
 
-        }
+    string aviam, avim, aviap, avip;
+    aviam =(*((*mum).second.mare)).first;
+    aviap =(*((*dad).second.mare)).first;
+    avim = (*((*mum).second.pare)).first;
+    avip = (*((*dad).second.pare)).first;
+    if(aviam == aviap or avim == avip) return 1;
+    if(!son_antecesors(pare, mare)) return 0;
+    return 1;
+}
 
-        if(reproduccion) reproduccion = !son_antecesors(pare, mare);
-        if(!reproduccion) cout<<"no es posible reproduccion"<<endl;
-        else{
-            individu hijo((*dad).second.in,(*mum).second.in);
-            familia fam;
-            fam.in = hijo;
-            fam.pare = dad;
-            fam.mare = mum;
-            pob.insert(pair<string, familia>(fill, fam));
-        }
+void poblacio::reproduir(string pare, string mare, string fill, especie&esp){
+  int repr = reproduccio_posible(pare, mare, fill);
+  if(!repr){//reproduccio posible i normal :)
+    mapiterator dad, mum;
+    dad = pob.find(pare);
+    mum = pob.find(mare);
+    individu fil((*dad).second.in, (*mum).second.in, esp);
+    familia fam;
+    fam.mare = mum;
+    fam.pare = dad;
+    fam.in = fil;
 
-    }
+    pob.insert(pair<string, familia>(fill, fam));
+  }else{
+    int inutil;
+    for(int i = 0; (i<esp.getN()+1)*3; ++i) cin>>inutil;
+    if(repr == 1)cout<<"error"<<endl;
+    else cout<<"no es posible reproduccion"<<endl;
+  }
+
 }
 
 void poblacio::escriure(){

@@ -23,7 +23,7 @@ public:
         \post Retornem un individu buit
     */
 
-    individu(const individu&pare, const individu&mare);
+    individu(const individu&pare, const individu&mare, especie&esp);
     /** @brief Retornem un individu nou, fill del pare i la mare mitjançant la reproducció
         \pre Al P.I estan el pare, la mare(on pare XY, mare XX)
         \post Retornem un individu nou mitjançant la reproduccio
@@ -47,7 +47,7 @@ public:
     */
 
     void escriure_arbre_geneologic();
-    /** @brief Escribim l'arbre geneologic de l'individu 
+    /** @brief Escribim l'arbre geneologic de l'individu
         \pre cert
         \post Ha quedat escrit l'arbre geneologic de l'individu ordenat per nivells
     */

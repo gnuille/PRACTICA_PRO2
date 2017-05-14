@@ -15,14 +15,14 @@ void parell_cromosomes::reproduir(int punt_tall){
 
 }
 
-vector<int> parell_cromosomes::consultar_c1(){
+vector<int> parell_cromosomes::consultar_c1() const{
     return c1;
 }
 /** @brief Retornem el cromosoma c1
     \pre cert
     \post retornem el cromosoma c1
 */
-vector<int> parell_cromosomes::consultar_c2(){
+vector<int> parell_cromosomes::consultar_c2() const{
     return c2;
 }
 /** @brief Retornem el cromosoma c2

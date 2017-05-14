@@ -27,12 +27,12 @@ public:
         \post el parell ha quedat modificat segons la reproduccio
     */
 
-		vector<int> consultar_c1();
+		vector<int> consultar_c1() const;
 		/** @brief Retornem el cromosoma c1
 				\pre cert
 				\post retornem el cromosoma c1
 		*/
-		vector<int> consultar_c2();
+		vector<int> consultar_c2() const;
 		/** @brief Retornem el cromosoma c2
 				\pre cert
 				\post retornem el cromosoma c2

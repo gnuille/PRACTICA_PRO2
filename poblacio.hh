@@ -9,16 +9,16 @@ using namespace std;
 
 class poblacio{
 
-private: 
+private:
     struct familia{
-	individu in;
+	      individu in;
         map<string,familia>::iterator  pare;
         map<string,familia>::iterator  mare;
     };
     map<string, familia> pob;
     typedef map<string,familia>::iterator mapiterator;
 
-	
+
 
 
 
@@ -28,13 +28,13 @@ public:
         \pre buit
         \post Retornem una poblacio buida
     */
-    
+
 
     individu consultar_individu(string nom);
     /** @brief Consultem un individu
 	\pre el nom de l'individu esta al map
 	\post retornem l'individu al qual li correspon el nom
-    */	
+    */
 
     void afegir_individu(string nom, const individu&ind);
     /** @brief Afegim un individu al map pob
@@ -47,10 +47,16 @@ public:
         \post retornem cert si hi ha un individu amb el nom, fals, si no.
     */
 
-    void reproduir(string pare, string mare, string fill);
-    /** @brief reproduim els individus pare mare i afegim el fill al sistema
-        \pre pare i mare estan a pob, nfill no
-        \post s'ha introduit mitjançant reproducció el fill al map d'individus
+    int reproduccio_posible(string pare, string mare, string fill);
+    /** @brief diem si es posible la reproduccio
+        \pre cert
+        \post retornem 1 si pare o mare no estan en el sistema o si fill ja hi es, 2 si no es posible la reproducio i 0 si ho es.
+    */
+
+    void reproduir(string pare, string mare, string fill, especie&esp);
+    /** @brief reproduim dos individus i si es posible l'afegim al sistema
+        \pre pare i mare es poden reproduir
+        \post si es poden reproduir entrarem a fill al sistema mitjançant el metode de reproduccio sino retornarem error
     */
     void escriure();
     /** @brief Escribim tots els elements per ordre alfabetic
