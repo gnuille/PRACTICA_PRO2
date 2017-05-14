@@ -20,7 +20,7 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 			int limit = esp.getl0();
 			for(int i = tall; i<limit; ++i){
 				this->x[i]^=this->x_y[i];
-				this->x_y[i]^=this->x[i]; //bitwise XOR swap
+				this->x_y[i]^=this->x[i]; //bitwise XOR swap, just for vim tryhards!
 				this->x[i]^=this->x_y[i];
 			}
 
@@ -42,7 +42,7 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 				cr.tallar(tall);
 				this->cromosomes[i] = cr;
 			}
-			
+
 
 }
 

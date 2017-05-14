@@ -67,7 +67,7 @@ void poblacio::reproduir(string pare, string mare, string fill, especie&esp){
     cout<<"Reproduccion hecha con exito"<<endl;
   }else{
     int inutil;
-    for(int i = 0; (i<esp.getN()+1)*3; ++i) cin>>inutil;
+    for(int i = 0; i<(esp.getN()+1)*3; ++i) cin>>inutil;
     if(repr == 2)cout<<"error"<<endl;
     else cout<<"no es posible reproduccion"<<endl;
   }
@@ -78,7 +78,7 @@ void poblacio::escriure(){
     mapiterator it;
     for(it = pob.begin(); it != pob.end(); ++it){
         cout<<(*it).first<<" "<<"X";
-        if((*it).second.in.consultar_sexe()) cout<<"Y";
+        if(!(*it).second.in.consultar_sexe()) cout<<"Y";
         else cout<<"X";
         cout<<" (";
         if((*it).second.pare == pob.end() or (*it).second.mare == pob.end()){

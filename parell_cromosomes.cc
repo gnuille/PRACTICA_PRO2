@@ -31,9 +31,9 @@ vector<int> parell_cromosomes::consultar_c2() const{
 */
 void parell_cromosomes::tallar(int i){
   for(int j = i; j<c1.size(); ++j){
-    int aux = c1[j];
-    c1[j] = c2[j];
-    c2[j] = aux;
+    c1[j]^=c2[j];
+    c2[j]^=c1[j];//bitwise XOR swap, just for vim tryhards!
+    c1[j]^=c2[j];
 
   }
 }
