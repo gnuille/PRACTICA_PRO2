@@ -101,6 +101,42 @@ void poblacio::llegir(especie&esp){
     }
 }
 
+bool te_pares(mapiterator a){ //privada
+    return (*this).second.pare != pob.end()
+}
+
+bool es_antecesor_aux(mapiterator low, string high){ //privada
+    bool b;
+    if(!te_pares(low)){
+        b = false;
+    }else{
+        if((*low).first == high) b = true;
+        else{
+            b = es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high);
+        }
+    }
+    return b;
+}
+
 bool poblacio::son_antecesors(string a, string b){
-    return false;
+    mapiterator pare = pob[a];
+    mapiterator mare = pob[b];
+
+    return (*this).es_antecesor_aux(pare, b) or (*this).es_antecesor_aux(mare, a); //inmersio!
+}
+
+void poblacio::escriure_arbre_geneologic_aux(mapiterator in, int&nivell, bool&lvl, bool&endLine){
+    if(in != pob.end()){
+        if(nivell) cout<<"Nivell "<<nivell<<":";
+        cout<<" "<<in.first;
+        if(endLine) cout<<endl;
+        //shit
+    }
+
+}
+
+void poblacio::escriure_arbre_geneologic(string nom){
+    mapiterator in = pob[nom];
+    escriure_arbre_geneologic_aux(in, 0, true, true);//inmersio!
+
 }

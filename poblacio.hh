@@ -18,14 +18,24 @@ private:
     map<string, familia> pob;
     typedef map<string,familia>::iterator mapiterator;
 
+    bool te_pares(mapiterator a);
+    /** @brief Retorna cert si l'individu te pares
+        operacio privada ja que treballem amb mapiterator
+        \pre cert
+        \post Retornem cert si l'individu apuntat per el mapiterator te pares
+    */
 
-
-
+    bool es_antecesor_aux(mapiterator low, string high);
+    /** @brief Retorna cert si el nom de l'individu high es un antecesor de l'individu low
+        operacio privada ja que treballem amb mapiterator's
+        \pre cert
+        \post Retornem cert si l'individu al qual correspon el nom high es antecesor de low.
+    */
 
 public:
     poblacio();
     /** @brief Retorna una poblacio buida
-        \pre buit
+        \pre cert
         \post Retornem una poblacio buida
     */
 
@@ -58,11 +68,7 @@ public:
         \pre pare i mare es poden reproduir
         \post si es poden reproduir entrarem a fill al sistema mitjançant el metode de reproduccio sino retornarem error
     */
-    void escriure();
-    /** @brief Escribim tots els elements per ordre alfabetic
-        \pre Cert
-        \post El conjunt queda escrit al canal estandard de sortida per ordre alfabetic
-    */
+
     bool son_antecesors(string a, string b);
 	/** @brief Busquem si els elements son antecesors
         \pre a i b son noms d'individus dintre del sistea
@@ -72,6 +78,18 @@ public:
     /** @brief Llegim una població inicial
         \pre El conjunt es buit, rebem una M i seguidament la informació de M individus
         \post  els M individus queden registrats en al map pob sense pares.
+    */
+
+    void escriure();
+    /** @brief Escribim tots els elements per ordre alfabetic
+        \pre Cert
+        \post El conjunt queda escrit al canal estandard de sortida per ordre alfabetic
+    */
+
+    void escriure_arbre_geneologic(string nom);
+    /** @brief Escribim l'arbre geneologic de l'individu
+        \pre cert
+        \post Ha quedat escrit l'arbre geneologic de l'individu ordenat per nivells
     */
 
 };

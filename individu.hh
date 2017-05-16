@@ -46,9 +46,5 @@ public:
         \post S'ha escrit la informacio genetica de l'individu al canal estandard de sortida
     */
 
-    void escriure_arbre_geneologic();
-    /** @brief Escribim l'arbre geneologic de l'individu
-        \pre cert
-        \post Ha quedat escrit l'arbre geneologic de l'individu ordenat per nivells
-    */
+    
 };

@@ -97,7 +97,3 @@ void individu::escriure_genotip(){
 	}
 
 }
-
-void individu::escriure_arbre_geneologic(){
-
-}

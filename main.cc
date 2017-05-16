@@ -41,7 +41,7 @@ int main(){
 		            break;
 	          }
 	          case reproduccion:{
-		            string mare, pare, fil;
+	                string mare, pare, fil;  //funciona !:) falta mirar si f:son_antecesors funciona!
 		            cin>>mare>>pare>>fil;
 		            pob.reproduir(pare, mare, fil, esp);
 		            break;
@@ -49,7 +49,7 @@ int main(){
     	      case escribir_arbol:{
 		            string nom;
 		            cin>>nom;
-		            if(pob.esta_individu(nom)) pob.consultar_individu(nom).escriure_arbre_geneologic();
+		            if(pob.esta_individu(nom)) pob.escriure_arbre_geneologic(nom);
 		            else cout<<"error"<<endl;
 		            break;
 	          }
