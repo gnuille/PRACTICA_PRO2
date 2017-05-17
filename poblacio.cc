@@ -111,6 +111,29 @@ bool poblacio::son_antecesors(string a, string b){
     return (*this).es_antecesor_aux(pare, b) or (*this).es_antecesor_aux(mare, a); //inmersio!
 }
 
+
+void poblacio::completar_arbre(){
+  Arbre<string> a;
+  llegir_arbre_string(a);
+  mapiterator base;
+  base = pob.find(a.arrel());
+
+  if(base == pob.end()) cout<<"no es arbol parcial";
+  else{
+    if(completar_arbre_aux(a, base)){
+      Arbre<string> a1,a2;
+      cout<<a.arrel();
+      a.fills(a1,a2);
+      escriure_arbre_string(a1);
+      escriure_arbre_string(a2);
+
+    }
+    else cout<<"no es arbol parcial";
+  }
+  cout<<endl;
+
+}
+
 void poblacio::escriure_arbre_geneologic(string nom){
   mapiterator in = pob.find(nom);
   if(in == pob.end()) cout<<"error"<<endl;
@@ -123,7 +146,7 @@ void poblacio::escriure_arbre_geneologic(string nom){
       int tam = familia.size();
       for(int i = 0; i<tam; ++i){
         cout<<" "<<(*familia.front()).first;
-        if((*this).te_pares(familia.front())){ //no se ha maltratado a ningun parentesis durante la programacion de esta operacion
+        if((*this).te_pares(familia.front())){
           familia.push((*familia.front()).second.pare);
           familia.push((*familia.front()).second.mare);
         }

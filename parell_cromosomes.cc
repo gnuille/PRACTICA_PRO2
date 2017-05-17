@@ -11,10 +11,6 @@ parell_cromosomes::parell_cromosomes(const vector<int>&c1,const vector<int>&c2){
     (*this).c2 = c2;
 }
 
-void parell_cromosomes::reproduir(int punt_tall){
-
-}
-
 vector<int> parell_cromosomes::consultar_c1() const{
     return c1;
 }

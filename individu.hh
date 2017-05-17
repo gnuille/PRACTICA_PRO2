@@ -2,8 +2,7 @@
     @brief Especificació de la clase Individu
 */
 
-#include<vector>
-#include<iostream>
+
 #include "parell_cromosomes.hh"
 #include "especie.hh"
 
@@ -46,5 +45,5 @@ public:
         \post S'ha escrit la informacio genetica de l'individu al canal estandard de sortida
     */
 
-    
+
 };

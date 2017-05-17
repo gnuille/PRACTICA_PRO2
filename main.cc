@@ -16,7 +16,7 @@ string_code hashit (string const& inString) {
     if (inString == "escribir_arbol_genealogico") return escribir_arbol;
     if (inString == "completar_arbol_genealogico") return completar_arbol;
     if (inString == "escribir_poblacion") return escribir_pob;
-    if (inString == "escribir_genotipo") return escribir_gen;
+    return escribir_gen;
 }
 
 
@@ -54,7 +54,7 @@ int main(){
 		            break;
 	          }
 	          case completar_arbol:{
-		            cout<<"no c de c nada";
+		            pob.completar_arbre();
 		            break;
 	         }
 	          case escribir_pob:{  //funciona !:)

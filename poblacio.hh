@@ -3,6 +3,8 @@
 */
 
 #include "individu.hh"
+#include "Arbre.hh"
+#include "Arb_string_IO.hh"
 #include<map>
 #include<queue>
 
@@ -46,6 +48,32 @@ private:
         \post Retornem cert si l'individu al qual correspon el nom high es antecesor de low.
     */
 
+    bool completar_arbre_aux(Arbre<string>&a, mapiterator raiz){
+      bool b;
+      Arbre<string> a1;
+      Arbre<string> a2;
+      if(!a.es_buit()){
+        string arr = a.arrel();
+        a.fills(a1, a2);
+        b = ((*raiz).first == arr) and (*this).completar_arbre_aux(a1, (*raiz).second.pare) and (*this).completar_arbre_aux(a2, (*raiz).second.mare);
+        a.plantar(arr, a1, a2);
+
+      }else if(raiz != pob.end()){
+        string centr = "*" + (*raiz).first + "*";
+        completar_arbre_aux(a1, (*raiz).second.pare);
+        completar_arbre_aux(a2, (*raiz).second.mare);
+        a.plantar(centr, a1, a2);
+        b = true;
+      }
+      return b;
+    }
+
+    /** @brief Retorna cert si es subarbre i modifica l'arbre
+        operacio privada ja que treballem amb mapiterator's
+        \pre cert
+        \post Retornem cert si l'arbre a es subarbre de pob i en cas de ser cert el modifiquem completant-lo i afegint * * als nous.
+    */
+
 public:
     poblacio();
     /** @brief Retorna una poblacio buida
@@ -81,6 +109,12 @@ public:
     /** @brief reproduim dos individus i si es posible l'afegim al sistema
         \pre pare i mare es poden reproduir
         \post si es poden reproduir entrarem a fill al sistema mitjançant el metode de reproduccio sino retornarem error
+    */
+
+    void completar_arbre();
+    /** @brief llegim un arbre diem si es o no subarbre de l'arbre geneologic d'algun individu i si ho es el completem marcant els nous
+        \pre rebem un arbre amb noms d'individus en preordre
+        \post ha quedat escrit en preordre el nom dels individus de l'arbre complret si es que era subarbre
     */
 
     bool son_antecesors(string a, string b);
