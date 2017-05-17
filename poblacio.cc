@@ -46,7 +46,10 @@ int poblacio::reproduccio_posible(string pare, string mare, string fill){
     if(avim != this->pob.end() and avip != this->pob.end()){
       if((*avim).first == (*avip).first or (*aviam).first == (*aviap).first) return 1;
     }
-    if(!son_antecesors(pare, mare)) return 0;
+    if(!son_antecesors(pare, mare)){
+      cout<<"son antecesors!!!"<<endl;
+       return 0;
+    }
     return 1;
 }
 
@@ -101,42 +104,35 @@ void poblacio::llegir(especie&esp){
     }
 }
 
-bool te_pares(mapiterator a){ //privada
-    return (*this).second.pare != pob.end()
-}
-
-bool es_antecesor_aux(mapiterator low, string high){ //privada
-    bool b;
-    if(!te_pares(low)){
-        b = false;
-    }else{
-        if((*low).first == high) b = true;
-        else{
-            b = es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high);
-        }
-    }
-    return b;
-}
-
 bool poblacio::son_antecesors(string a, string b){
-    mapiterator pare = pob[a];
-    mapiterator mare = pob[b];
+    mapiterator pare = pob.find(a);
+    mapiterator mare = pob.find(b);
 
     return (*this).es_antecesor_aux(pare, b) or (*this).es_antecesor_aux(mare, a); //inmersio!
 }
 
-void poblacio::escriure_arbre_geneologic_aux(mapiterator in, int&nivell, bool&lvl, bool&endLine){
-    if(in != pob.end()){
-        if(nivell) cout<<"Nivell "<<nivell<<":";
-        cout<<" "<<in.first;
-        if(endLine) cout<<endl;
-        //shit
-    }
-
-}
-
 void poblacio::escriure_arbre_geneologic(string nom){
-    mapiterator in = pob[nom];
-    escriure_arbre_geneologic_aux(in, 0, true, true);//inmersio!
+  mapiterator in = pob.find(nom);
+  if(in == pob.end()) cout<<"error"<<endl;
+  else{
+    int lvl = 0;
+    queue<mapiterator> familia;
+    familia.push(in);
+    while(!familia.empty()){
+      cout<<"Nivel "<<lvl<<":";
+      int tam = familia.size();
+      for(int i = 0; i<tam; ++i){
+        cout<<" "<<(*familia.front()).first;
+        if((*this).te_pares(familia.front())){ //no se ha maltratado a ningun parentesis durante la programacion de esta operacion
+          familia.push((*familia.front()).second.pare);
+          familia.push((*familia.front()).second.mare);
+        }
+
+        familia.pop();
+      }
+      cout<<endl;
+      ++lvl;
+    }
+  }
 
 }

@@ -13,8 +13,8 @@ enum string_code{
 string_code hashit (string const& inString) {
     if (inString == "anadir_individuo") return addIn;
     if (inString == "reproduccion_sexual") return reproduccion;
-    if (inString == "escribir_arbol_geneologico") return escribir_arbol;
-    if (inString == "completar_arbol_geneologico") return completar_arbol;
+    if (inString == "escribir_arbol_genealogico") return escribir_arbol;
+    if (inString == "completar_arbol_genealogico") return completar_arbol;
     if (inString == "escribir_poblacion") return escribir_pob;
     if (inString == "escribir_genotipo") return escribir_gen;
 }

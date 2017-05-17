@@ -4,6 +4,7 @@
 
 #include "individu.hh"
 #include<map>
+#include<queue>
 
 using namespace std;
 
@@ -18,14 +19,27 @@ private:
     map<string, familia> pob;
     typedef map<string,familia>::iterator mapiterator;
 
-    bool te_pares(mapiterator a);
+    bool te_pares(mapiterator a){
+      return (*a).second.pare != pob.end();
+    }
     /** @brief Retorna cert si l'individu te pares
         operacio privada ja que treballem amb mapiterator
         \pre cert
         \post Retornem cert si l'individu apuntat per el mapiterator te pares
     */
 
-    bool es_antecesor_aux(mapiterator low, string high);
+    bool es_antecesor_aux(mapiterator low, string high){
+      bool b;
+      if(!te_pares(low)){
+          b = false;
+      }else{
+          if((*low).first == high) b = true;
+          else{
+              b = es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high);
+          }
+      }
+      return b;
+    }
     /** @brief Retorna cert si el nom de l'individu high es un antecesor de l'individu low
         operacio privada ja que treballem amb mapiterator's
         \pre cert
