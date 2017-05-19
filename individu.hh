@@ -14,6 +14,7 @@ private:
 	vector<parell_cromosomes> cromosomes;
 	vector<int> x;
 	vector<int> x_y;
+	bool sexe;
 
 public:
     individu();

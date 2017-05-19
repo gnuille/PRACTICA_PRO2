@@ -14,13 +14,54 @@ class poblacio{
 
 private:
     struct familia{
-	      individu in;
+	    individu in;
         map<string,familia>::iterator  pare;
         map<string,familia>::iterator  mare;
     };
     map<string, familia> pob;
     typedef map<string,familia>::iterator mapiterator;
-
+	
+	bool reproduccio_posible(mapiterator pare, mapiterator mare, mapiterator fill){
+		if(pare == pob.end() or mare == pob.end() or fill !=pob.end()){
+			cout<<"  error"<<endl;
+			return false;
+		}
+		if((*pare).second.in.consultar_sexe() or !(*mare).second.in.consultar_sexe()){
+			cout<<"  no es posible reproduccion"<<endl;
+			return false;
+		}
+		mapiterator avip = (*pare).second.pare;
+		mapiterator avim = (*mare).second.pare;
+		mapiterator aviap = (*pare).second.mare;
+		mapiterator aviam = (*mare).second.mare;
+		
+		if(avip != pob.end() and avim != pob.end()){
+			if((*avip).first == (*avim).first){
+				cout<<"  no es posible reproduccion"<<endl;
+				return false;
+			}
+		}
+		
+		if(aviap != pob.end() and aviam != pob.end()){
+			if((*aviap).first == (*aviam).first){
+				cout<<"  no es posible reproduccion"<<endl;
+				return false;
+			}
+		}
+		
+		if(son_antecesors((*pare).first, (*mare).first)){
+			cout<<"  no es posible reproduccion"<<endl;
+			return false;
+		}
+		return true;
+		
+	}
+    /** @brief diem si es posible la reproduccio
+        \pre cert
+        \post retornem cert si la reproduccio es posible i fals si no, a demes a quedat escrit el tipus de error
+    */
+	
+	
     bool te_pares(mapiterator a){
       return (*a).second.pare != pob.end();
     }
@@ -32,15 +73,9 @@ private:
 
     bool es_antecesor_aux(mapiterator low, string high){
       bool b;
-      if(!te_pares(low)){
-          b = false;
-      }else{
-          if((*low).first == high) b = true;
-          else{
-              b = es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high);
-          }
-      }
-      return b;
+      if(low == this->pob.end()) b = false;
+      else b =((*low).first == high or es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high));
+	  return b;
     }
     /** @brief Retorna cert si el nom de l'individu high es un antecesor de l'individu low
         operacio privada ja que treballem amb mapiterator's
@@ -97,13 +132,7 @@ public:
      /** @brief Busquem un individu al sistema
         \pre cert
         \post retornem cert si hi ha un individu amb el nom, fals, si no.
-    */
-
-    int reproduccio_posible(string pare, string mare, string fill);
-    /** @brief diem si es posible la reproduccio
-        \pre cert
-        \post retornem 1 si pare o mare no estan en el sistema o si fill ja hi es, 2 si no es posible la reproducio i 0 si ho es.
-    */
+    */   
 
     void reproduir(string pare, string mare, string fill, especie&esp);
     /** @brief reproduim dos individus i si es posible l'afegim al sistema

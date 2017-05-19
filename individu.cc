@@ -14,8 +14,10 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 			if(cm) this->x = mare.x_y;
 			else this->x = mare.x;
 
-			if(cp) this->x_y = pare.x_y;
-			else this->x_y = pare.x;
+			if(cp) this->x_y = pare.x_y; 
+			else this->x_y = pare.x; 
+			
+			this->sexe = !cp;
 
 			int limit = esp.getl0();
 			for(int i = tall; i<limit; ++i){
@@ -47,7 +49,7 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 }
 
 bool individu::consultar_sexe(){
-	return x.size() == x_y.size();
+	return sexe;
 }
 
 void individu::llegir(especie&esp){
@@ -56,9 +58,11 @@ void individu::llegir(especie&esp){
 	char sexe;
 	cin>>sexe;
 	if(sexe == 'X'){
-		x_y = vector<int>(esp.getlx());    //preguntar si millor fer push_back o fer aquesta asignacio
+		x_y = vector<int>(esp.getlx());
+		this->sexe = true;    //preguntar si millor fer push_back o fer aquesta asignacio
 	}else{
 		x_y = vector<int>(esp.getly());
+		this->sexe = false;
 	}
 
 	for(int i = 0; i<x.size();++i){
@@ -76,22 +80,22 @@ void individu::llegir(especie&esp){
 }
 
 void individu::escriure_genotip(){
-	cout<<"X:";
+	cout<<"  X:";
 	for(int i = 0; i<x.size(); ++i){
 		cout<<" "<<x[i];
 	}
 	cout<<endl;
-	if(x.size()!=x_y.size()) cout<<"Y:";
-	else cout<<"X:";
+	if(!this->sexe) cout<<"  Y:";
+	else cout<<"  X:";
 	for(int i = 0; i<x_y.size(); ++i){
 		cout<<" "<<x_y[i];
 	}
 	cout<<endl;
 	for(int i = 0; i<cromosomes.size(); ++i){
-		cout<<i+1<<".";
+		cout<<"  "<<i+1<<".";
 		cromosomes[i].escriure_c1();
 		cout<<endl;
-		cout<<i+1<<".";
+		cout<<"  "<<i+1<<".";
 		cromosomes[i].escriure_c2();
 		cout<<endl;
 	}
