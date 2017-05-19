@@ -29,7 +29,7 @@ void poblacio::reproduir(string pare, string mare, string fill, especie&esp){
   par = this->pob.find(pare);
   mar = this->pob.find(mare);
   fil = this->pob.find(fill);
-  
+
   if(this->reproduccio_posible(par, mar, fil)){
 	  individu ind((*par).second.in, (*mar).second.in, esp);
 	  familia fam;
@@ -79,22 +79,34 @@ bool poblacio::son_antecesors(string a, string b){
 
 
 void poblacio::completar_arbre(){
-  Arbre<string> a;
-  llegir_arbre_string(a);
-  mapiterator base;
-  string ar =a.arrel();
-  cout<<" "<<ar<<endl;
-  base = pob.find(ar);
+  string s;
+  cin>>s;
+  cout<<" "<<s<<endl;
 
-  if(base == pob.end()) cout<<"  no es arbol parcial";
-  else{
-    if(completar_arbre_aux(a, base)){      
-      cout<<" ";     
-      escriure_arbre_string(a);     
-	}
-    else cout<<"  no es arbol parcial";
+  mapiterator m = pob.find(s);
+  mapiterator mare, pare;
+  if(m != pob.end()){
+    mare = (*m).second.mare;
+    pare = (*m).second.pare;
+  }else{
+    mare = pob.end();
+    pare = pob.end();
   }
-  cout<<endl;
+  queue<string> to_print;
+  to_print.push(s);
+  bool b;
+  if(s != "$") b = (*this).completar_arbre_aux(to_print, pare) and (*this).completar_arbre_aux(to_print, mare) and m != pob.end();
+  cout<<" ";
+  if(b){
+    int tam = to_print.size();
+    for(int i = 0; i<tam; ++i){
+      cout<<" "<<to_print.front();
+      to_print.pop();
+    }
+    cout<<endl;
+  }else{
+    cout<<" no es arbol parcial"<<endl;
+  }
 
 }
 
@@ -122,6 +134,6 @@ void poblacio::escriure_arbre_geneologic(string nom){
 		cout<<endl;
 	}
   }
-  
+
 
 }

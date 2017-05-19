@@ -3,8 +3,6 @@
 */
 
 #include "individu.hh"
-#include "Arbre.hh"
-#include "Arb_string_IO.hh"
 #include<map>
 #include<queue>
 
@@ -20,7 +18,7 @@ private:
     };
     map<string, familia> pob;
     typedef map<string,familia>::iterator mapiterator;
-	
+
 	bool reproduccio_posible(mapiterator pare, mapiterator mare, mapiterator fill){
 		if(pare == pob.end() or mare == pob.end() or fill !=pob.end()){
 			cout<<"  error"<<endl;
@@ -34,34 +32,34 @@ private:
 		mapiterator avim = (*mare).second.pare;
 		mapiterator aviap = (*pare).second.mare;
 		mapiterator aviam = (*mare).second.mare;
-		
+
 		if(avip != pob.end() and avim != pob.end()){
 			if((*avip).first == (*avim).first){
 				cout<<"  no es posible reproduccion"<<endl;
 				return false;
 			}
 		}
-		
+
 		if(aviap != pob.end() and aviam != pob.end()){
 			if((*aviap).first == (*aviam).first){
 				cout<<"  no es posible reproduccion"<<endl;
 				return false;
 			}
 		}
-		
+
 		if(son_antecesors((*pare).first, (*mare).first)){
 			cout<<"  no es posible reproduccion"<<endl;
 			return false;
 		}
 		return true;
-		
+
 	}
     /** @brief diem si es posible la reproduccio
         \pre cert
         \post retornem cert si la reproduccio es posible i fals si no, a demes a quedat escrit el tipus de error
     */
-	
-	
+
+
     bool te_pares(mapiterator a){
       return (*a).second.pare != pob.end();
     }
@@ -83,30 +81,45 @@ private:
         \post Retornem cert si l'individu al qual correspon el nom high es antecesor de low.
     */
 
-    bool completar_arbre_aux(Arbre<string>&a, mapiterator raiz){
-      bool b;
-      Arbre<string> a1;
-      Arbre<string> a2;
-      if(!a.es_buit()){
-        string arr = a.arrel();
-        a.fills(a1, a2);
-        b = ((*raiz).first == arr) and (*this).completar_arbre_aux(a1, (*raiz).second.pare) and (*this).completar_arbre_aux(a2, (*raiz).second.mare);
-        a.plantar(arr, a1, a2);
-
-      }else if(raiz != pob.end()){
-        string centr = "*" + (*raiz).first + "*";
-        completar_arbre_aux(a1, (*raiz).second.pare);
-        completar_arbre_aux(a2, (*raiz).second.mare);
-        a.plantar(centr, a1, a2);
-        b = true;
+    void completar(queue<string>&to_print, mapiterator actual){
+      if(actual != pob.end()){
+        to_print.push("*"+(*actual).first+"*");
+        (*this).completar(to_print, (*actual).second.pare);
+        (*this).completar(to_print, (*actual).second.mare);
+      }else{
+        to_print.push("$");
       }
+    }
+    bool completar_arbre_aux(queue<string>&to_print, mapiterator actual){
+      string s;
+      cin>>s;
+      bool b;
+      if(s == "$"){
+        completar(to_print, actual);
+        b = true;
+      }else{
+        mapiterator mare, pare;
+        to_print.push(s);
+        if(actual == pob.end()){
+          mare = pob.end();  //per consumir dades:)
+          pare = pob.end();
+          b = false;
+        }
+        else{
+          mare = (*actual).second.mare;
+          pare = (*actual).second.pare;
+          b = true;
+        }
+        b = b and (*actual).first == s;
+        b = completar_arbre_aux(to_print, pare) and b;
+        b = completar_arbre_aux(to_print, mare) and b;
+      }
+
       return b;
     }
-
-    /** @brief Retorna cert si es subarbre i modifica l'arbre
-        operacio privada ja que treballem amb mapiterator's
-        \pre cert
-        \post Retornem cert si l'arbre a es subarbre de pob i en cas de ser cert el modifiquem completant-lo i afegint * * als nous.
+    /** @brief Retorna cert si l'arbre introduit en preordre es subarbre
+        \pre Al canal estandard de entrada hi ha un arbre en preordre
+        \post Retornem una poblacio buida
     */
 
 public:
@@ -132,7 +145,7 @@ public:
      /** @brief Busquem un individu al sistema
         \pre cert
         \post retornem cert si hi ha un individu amb el nom, fals, si no.
-    */   
+    */
 
     void reproduir(string pare, string mare, string fill, especie&esp);
     /** @brief reproduim dos individus i si es posible l'afegim al sistema
