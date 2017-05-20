@@ -7,7 +7,7 @@ enum string_code{
     completar_arbol,
     escribir_pob,
     escribir_gen,
-	bona_tarda
+	  def
 };
 
 string_code hashit (string const& inString) {
@@ -18,7 +18,7 @@ string_code hashit (string const& inString) {
     if (inString == "completar_arbol_genealogico") return completar_arbol;
     if (inString == "escribir_poblacion") return escribir_pob;
     if (inString == "escribir_genotipo") return escribir_gen;
-    return bona_tarda;
+    return def;
 }
 
 
@@ -44,14 +44,14 @@ int main(){
 		            break;
 	          }
 	          case reproduccion:{
-	                string mare, pare, fil;  //funciona !:) 
+	              string mare, pare, fil;  //funciona !:)
 		            cin>>mare>>pare>>fil;
 		            cout<<" "<<mare<<" "<<pare<<" "<<fil<<endl;
 		            pob.reproduir(pare, mare, fil, esp);
 		            break;
 	          }
-    	      case escribir_arbol:{  //funciona !:)  
-		            string nom;     
+    	      case escribir_arbol:{  //funciona !:)
+		            string nom;
 		            cin>>nom;
 		            cout<<" "<<nom<<endl;
 		            if(pob.esta_individu(nom)) pob.escriure_arbre_geneologic(nom);
@@ -63,21 +63,20 @@ int main(){
 		            break;
 	         }
 	          case escribir_pob:{  //funciona !:)
-					cout<<endl;
+					      cout<<endl;
 		            pob.escriure();
 		            break;
 	         }
 	          case escribir_gen:{  //funciona !:)
-					string nom;
-					cin>>nom;
-					cout<<" "<<nom<<endl;
-					if(pob.esta_individu(nom)) pob.consultar_individu(nom).escriure_genotip();
-					else cout<<"  error"<<endl;
-					break;
+					      string nom;
+					      cin>>nom;
+					      cout<<" "<<nom<<endl;
+					      if(pob.esta_individu(nom)) pob.consultar_individu(nom).escriure_genotip();
+					      else cout<<"  error"<<endl;
+					      break;
 	        }
-	       default:
-		       cout<<"no se que fas!"<<endl;
-		       break;
+	         default:
+		            break;
 
 	    }
 	    cin>>op;
