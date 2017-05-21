@@ -1,11 +1,17 @@
 /** @file parell_cromosomes.hh
     @brief Especificació de la clase parell_cromosomes
 */
+#ifndef NO_DIAGRAM
 #include<iostream>
 #include<vector>
+#endif
+
 using namespace std;
 
 class parell_cromosomes{
+/** @class parell_cromosomes
+	@brief Emmagatzema la informacio de un parell de cromosomes amb metodes per a fer posible la reproduccio i escriure els genotips
+*/
 private:
 	vector<int> c1;
 	vector<int> c2;
@@ -27,21 +33,21 @@ public:
         \post el parell ha quedat modificat segons la reproduccio
     */
 
-		vector<int> consultar_c1() const;
-		/** @brief Retornem el cromosoma c1
-				\pre cert
-				\post retornem el cromosoma c1
-		*/
-		vector<int> consultar_c2() const;
-		/** @brief Retornem el cromosoma c2
-				\pre cert
-				\post retornem el cromosoma c2
-		*/
-		void tallar(int i);
-		/** @brief Tallem els cromosomes
-				\pre 0<i<li
-				\post retornem el cromosoma c2
-		*/
+	vector<int> consultar_c1() const;
+	/** @brief Retornem el cromosoma c1
+			\pre cert
+			\post retornem el cromosoma c1
+	*/
+	vector<int> consultar_c2() const;
+	/** @brief Retornem el cromosoma c2
+			\pre cert
+			\post retornem el cromosoma c2
+	*/
+	void tallar(int i);
+	/** @brief Tallem els cromosomes
+			\pre 0<i<li
+			\post retornem el cromosoma c2
+	*/
 
     void llegir(int tam);
     /** @brief llegim el parell de cromosomes

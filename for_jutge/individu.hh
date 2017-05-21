@@ -9,7 +9,11 @@
 using namespace std;
 
 class individu{
+/** @class individu
+	@brief Emmagatzema la informacio genetica dels individus.
+	Guarda els parells de cromosomes normals i els cromosomes x i x_y
 
+*/
 private:
 	vector<parell_cromosomes> cromosomes;
 	vector<int> x;

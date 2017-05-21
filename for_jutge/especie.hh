@@ -1,8 +1,17 @@
-#include<vector>
+/** @file especie.hh
+    @brief Especificació de la clase especie.hh
+*/
+
+#ifndef NO_DIAGRAM
 #include<iostream>
+#include<vector>
+#endif
 using namespace std;
 
 class especie{
+	/** @class especie
+		@brief Guardem la informacio genetica de la especie 
+*/
 private:
 	int N;
 	vector<int> l;
@@ -10,7 +19,7 @@ private:
 	int lx;
 	int l0;
 public:
-	
+
 	especie();
 	/** @brief Constructora de la clase especie
         \pre Cert

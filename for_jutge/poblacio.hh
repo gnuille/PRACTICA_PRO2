@@ -3,12 +3,21 @@
 */
 
 #include "individu.hh"
+
+#ifndef NO_DIAGRAM
 #include<map>
 #include<queue>
+#endif
 
 using namespace std;
 
 class poblacio{
+/** @class poblacio
+    @brief sistema on emmagatzemem els individus amb el seu nom i un iterador que apunta al pare i la
+    mare de cada individu.
+
+    Les operacions que tracten amb iteradors les em declarat com a privades
+*/
 
 private:
     struct familia{
