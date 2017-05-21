@@ -13,15 +13,15 @@ class parell_cromosomes{
 	@brief Emmagatzema la informacio de un parell de cromosomes amb metodes per a fer posible la reproduccio i escriure els genotips
 */
 private:
-	vector<int> c1;
-	vector<int> c2;
+	vector<bool> c1;
+	vector<bool> c2;
 public:
 	parell_cromosomes();
 	/** @brief constructora del parell de cromosomes
         \pre cert
         \post Retornem un parell de cromosomes buit
     */
-    parell_cromosomes(const vector<int>&c1,const vector<int>&c2);
+    parell_cromosomes(const vector<bool>&c1,const vector<bool>&c2);
 	/** @brief constructora del parell de cromosomes
         \pre c1 i c2 son cromosomes
         \post Retornem un parell de cromosomes on el P.I son els cromosomes
@@ -33,12 +33,12 @@ public:
         \post el parell ha quedat modificat segons la reproduccio
     */
 
-	vector<int> consultar_c1() const;
+	vector<bool> consultar_c1() const;
 	/** @brief Retornem el cromosoma c1
 			\pre cert
 			\post retornem el cromosoma c1
 	*/
-	vector<int> consultar_c2() const;
+	vector<bool> consultar_c2() const;
 	/** @brief Retornem el cromosoma c2
 			\pre cert
 			\post retornem el cromosoma c2

@@ -16,8 +16,8 @@ class individu{
 */
 private:
 	vector<parell_cromosomes> cromosomes;
-	vector<int> x;
-	vector<int> x_y;
+	vector<bool> x;
+	vector<bool> x_y;
 	bool sexe;
 
 public:

@@ -92,9 +92,9 @@ private:
     bool es_antecesor_aux(mapiterator low, string high){
       bool b;
       if(low == this->pob.end()) b = false; //si no el trobem retornem fals
-      else b =((*low).first == high or es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high));
+      else b = ((*low).first == high or es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high));
       //^si el nom es igual al que busquem retornem cert i no fem les crides recursives i sino doncs mirem a partir del pare i despres de la mare
-	    return b;
+	  return b;
     }
     /** @brief Retorna cert si el nom de l'individu high es un antecesor de l'individu low operacio privada ja que treballem amb mapiterator's
         \pre cert

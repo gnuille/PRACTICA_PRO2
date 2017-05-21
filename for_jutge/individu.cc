@@ -14,16 +14,16 @@ individu::individu(const individu&pare, const individu&mare, especie&esp){
 			if(cm) this->x = mare.x_y;
 			else this->x = mare.x;
 
-			if(cp) this->x_y = pare.x_y; 
-			else this->x_y = pare.x; 
-			
+			if(cp) this->x_y = pare.x_y;
+			else this->x_y = pare.x;
+
 			this->sexe = !cp;
 
 			int limit = esp.getl0();
 			for(int i = tall; i<limit; ++i){
-				this->x[i]^=this->x_y[i];
-				this->x_y[i]^=this->x[i]; //bitwise XOR swap, just for vim tryhards!
-				this->x[i]^=this->x_y[i];
+				bool aux = this->x[i];
+				this->x[i] = this->x_y[i];
+				this->x_y[i] = aux;
 			}
 
 
@@ -58,18 +58,22 @@ void individu::llegir(especie&esp){
 	char sexe;
 	cin>>sexe;
 	if(sexe == 'X'){
-		x_y = vector<int>(esp.getlx());
+		x_y = vector<bool>(esp.getlx());
 		this->sexe = true;    //preguntar si millor fer push_back o fer aquesta asignacio
 	}else{
-		x_y = vector<int>(esp.getly());
+		x_y = vector<bool>(esp.getly());
 		this->sexe = false;
 	}
 
 	for(int i = 0; i<x.size();++i){
-		cin>>x[i];
+		int inp;
+		cin>>inp;
+		x[i] = inp;
 	}
 	for(int i = 0; i<x_y.size(); ++i){
-		cin>>x_y[i];
+		int inp;
+		cin>>inp;
+		x_y[i] = inp;
 	}
 	cromosomes = vector<parell_cromosomes>(esp.getN());
 	for(int i = 0; i<esp.getN(); ++i){
@@ -82,13 +86,17 @@ void individu::llegir(especie&esp){
 void individu::escriure_genotip(){
 	cout<<"  X:";
 	for(int i = 0; i<x.size(); ++i){
-		cout<<" "<<x[i];
+		cout<<" ";
+		if(x[i]) cout<<1;
+		else cout<<0;
 	}
 	cout<<endl;
 	if(!this->sexe) cout<<"  Y:";
 	else cout<<"  X:";
 	for(int i = 0; i<x_y.size(); ++i){
-		cout<<" "<<x_y[i];
+		cout<<" ";
+		if(x_y[i]) cout<<1;
+		else cout<<0;
 	}
 	cout<<endl;
 	for(int i = 0; i<cromosomes.size(); ++i){
