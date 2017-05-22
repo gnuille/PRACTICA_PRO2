@@ -1,0 +1,723 @@
+\hypertarget{classpoblacio}{}\section{Referencia de la Clase poblacio}
+\label{classpoblacio}\index{poblacio@{poblacio}}
+
+
+sistema on emmagatzemem els individus amb el seu nom i un iterador que apunta al pare i la mare de cada individu.  
+
+
+\subsection*{Clases}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpoblacio_1_1familia}{familia}
+\begin{DoxyCompactList}\small\item\em Estructura familia amb iteradors que apunten al pare i a la mare de l\textquotesingle{}individu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}{poblacio} ()
+\begin{DoxyCompactList}\small\item\em Retorna una poblacio buida. \end{DoxyCompactList}\item 
+\hyperlink{classindividu}{individu} \hyperlink{classpoblacio_a30ec7988306978a608ab11062069e6e1}{consultar\+\_\+individu} (string nom)
+\begin{DoxyCompactList}\small\item\em Consultem un individu. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a09a516141a9a8bef9249239916894af5}{afegir\+\_\+individu} (string nom, const \hyperlink{classindividu}{individu} \&ind)
+\begin{DoxyCompactList}\small\item\em Afegim un individu al map pob. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a347bc063088e161813c257211d8059b9}{reproduir} (string pare, string mare, string fill, \hyperlink{classespecie}{especie} \&esp)
+\begin{DoxyCompactList}\small\item\em reproduim dos individus i si es posible l\textquotesingle{}afegim al sistema \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}{esta\+\_\+individu} (string nom)
+\begin{DoxyCompactList}\small\item\em Busquem un individu al sistema. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a1e30be9019dcb194171228c41284117f}{completar\+\_\+arbre} ()
+\begin{DoxyCompactList}\small\item\em llegim un arbre diem si es o no subarbre de l\textquotesingle{}arbre geneologic d\textquotesingle{}algun individu i si ho es el completem marcant els nous \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a0002a245d187017cf1af34b364c176a0}{son\+\_\+antecesors} (string a, string b)
+\begin{DoxyCompactList}\small\item\em Busquem si els elements son antecesors. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a02fda63e8b0144ce197764753778a201}{llegir} (\hyperlink{classespecie}{especie} \&esp)
+\begin{DoxyCompactList}\small\item\em Llegim una població inicial. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}{escriure} ()
+\begin{DoxyCompactList}\small\item\em Escribim tots els elements per ordre alfabetic. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a30e1c829999a403012ce09172461d656}{escriure\+\_\+arbre\+\_\+geneologic} (string nom)
+\begin{DoxyCompactList}\small\item\em Escribim l\textquotesingle{}arbre geneologic de l\textquotesingle{}individu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Tipos privados}
+\begin{DoxyCompactItemize}
+\item 
+typedef map$<$ string, \hyperlink{structpoblacio_1_1familia}{familia} $>$\+::iterator \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator}
+\begin{DoxyCompactList}\small\item\em Typedef per a amenitzar la programacio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Métodos privados}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classpoblacio_ad8651d82e2eb8863e853d57d9b8b9985}{reproduccio\+\_\+posible} (\hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} pare, \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} mare, \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} fill)
+\begin{DoxyCompactList}\small\item\em diem si es posible la reproduccio, metode privat ja que treballem amb mapiteradors. \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a03e79690411d8ca8aa7d1e5646ca1c19}{te\+\_\+pares} (\hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} a)
+\begin{DoxyCompactList}\small\item\em Retorna cert si l\textquotesingle{}individu te pares operacio privada ja que treballem amb mapiterator. \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a068248eaa6d1090e4114e2c799c850b1}{es\+\_\+antecesor\+\_\+aux} (\hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} low, string high)
+\begin{DoxyCompactList}\small\item\em Retorna cert si el nom de l\textquotesingle{}individu high es un antecesor de l\textquotesingle{}individu low operacio privada ja que treballem amb mapiterator\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \hyperlink{classpoblacio_a90b5d501f5b346aecb3c1ba170b3fb6f}{completar} (queue$<$ string $>$ \&to\+\_\+print, \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} actual)
+\begin{DoxyCompactList}\small\item\em Donada una cua i un mapiterador, la plenem completant l\textquotesingle{}arbre geneolofic de l\textquotesingle{}individu actual. \end{DoxyCompactList}\item 
+bool \hyperlink{classpoblacio_a85493b733f10c8a276986a5a32404352}{completar\+\_\+arbre\+\_\+aux} (queue$<$ string $>$ \&to\+\_\+print, \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} actual)
+\begin{DoxyCompactList}\small\item\em Retorna cert si donat un arbre en preordre es subarbre de l\textquotesingle{}inidividu actual, a mes a mes, el completem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributos privados}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ string, \hyperlink{structpoblacio_1_1familia}{familia} $>$ \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}
+\begin{DoxyCompactList}\small\item\em Mapa on guardem els individus amb els seus noms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+sistema on emmagatzemem els individus amb el seu nom i un iterador que apunta al pare i la mare de cada individu. 
+
+Les operacions que tracten amb iteradors les em declarat com a privades 
+
+Definición en la línea 15 del archivo poblacio.\+hh.
+
+
+
+\subsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\index{poblacio@{poblacio}!mapiterator@{mapiterator}}
+\index{mapiterator@{mapiterator}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{mapiterator}{mapiterator}}]{\setlength{\rightskip}{0pt plus 5cm}typedef map$<$string,{\bf familia}$>$\+::iterator {\bf poblacio\+::mapiterator}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{}\label{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}
+
+
+Typedef per a amenitzar la programacio. 
+
+
+
+Definición en la línea 42 del archivo poblacio.\+hh.
+
+
+
+\subsection{Documentación del constructor y destructor}
+\index{poblacio@{poblacio}!poblacio@{poblacio}}
+\index{poblacio@{poblacio}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{poblacio()}{poblacio()}}]{\setlength{\rightskip}{0pt plus 5cm}poblacio\+::poblacio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}{}\label{classpoblacio_a8d6ad7ce285dd47c9cfd806e302d7086}
+
+
+Retorna una poblacio buida. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retornem una poblacio buida 
+\end{DoxyPostcond}
+
+
+Definición en la línea 5 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+5                   \{
+6 
+7 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de las funciones miembro}
+\index{poblacio@{poblacio}!reproduccio\+\_\+posible@{reproduccio\+\_\+posible}}
+\index{reproduccio\+\_\+posible@{reproduccio\+\_\+posible}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{reproduccio\+\_\+posible(mapiterator pare, mapiterator mare, mapiterator fill)}{reproduccio_posible(mapiterator pare, mapiterator mare, mapiterator fill)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::reproduccio\+\_\+posible (
+\begin{DoxyParamCaption}
+\item[{{\bf mapiterator}}]{pare, }
+\item[{{\bf mapiterator}}]{mare, }
+\item[{{\bf mapiterator}}]{fill}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_ad8651d82e2eb8863e853d57d9b8b9985}{}\label{classpoblacio_ad8651d82e2eb8863e853d57d9b8b9985}
+
+
+diem si es posible la reproduccio, metode privat ja que treballem amb mapiteradors. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retornem cert si la reproduccio es posible i fals si no, a demes a quedat escrit el tipus de error 
+\end{DoxyPostcond}
+
+
+Definición en la línea 48 del archivo poblacio.\+hh.
+
+
+\begin{DoxyCode}
+48                                                                                 \{
+49     \textcolor{comment}{//comprovem que pare i mare estiguin al sistema,i que el fill no hi sigui}
+50     \textcolor{keywordflow}{if}(pare == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end() or mare == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end() or fill !=\hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+51       cout<<\textcolor{stringliteral}{"  error"}<<endl;
+52       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+53     \}
+54 
+55     \textcolor{comment}{//Comprobem els sexes del pare i la mare}
+56     \textcolor{keywordflow}{if}((*pare).second.in.consultar\_sexe() or !(*mare).second.in.consultar\_sexe())\{
+57       cout<<\textcolor{stringliteral}{"  no es posible reproduccion"}<<endl;
+58       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+59     \}
+60 
+61     \textcolor{comment}{//mirem que no siguin germans (no tinguin ni el mateix pare ni la mateixa mare)}
+62     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} avip = (*pare).second.pare;
+63     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} avim = (*mare).second.pare;
+64     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} aviap = (*pare).second.mare;
+65     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} aviam = (*mare).second.mare;
+66 
+67     \textcolor{keywordflow}{if}(avip != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end() and avim != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+68       \textcolor{keywordflow}{if}((*avip).first == (*avim).first)\{
+69         cout<<\textcolor{stringliteral}{"  no es posible reproduccion"}<<endl;
+70         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+71       \}
+72     \}
+73 
+74     \textcolor{keywordflow}{if}(aviap != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end() and aviam != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+75       \textcolor{keywordflow}{if}((*aviap).first == (*aviam).first)\{
+76         cout<<\textcolor{stringliteral}{"  no es posible reproduccion"}<<endl;
+77         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+78       \}
+79     \}
+80 
+81     \textcolor{comment}{//finalment mirem que un no sigui antecesor de l'altre i viceversa}
+82     \textcolor{keywordflow}{if}(\hyperlink{classpoblacio_a0002a245d187017cf1af34b364c176a0}{son\_antecesors}((*pare).first, (*mare).first))\{
+83       cout<<\textcolor{stringliteral}{"  no es posible reproduccion"}<<endl;
+84       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+85     \}
+86     \textcolor{comment}{//si compleix totes les condicions retornem cert}
+87     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+88 
+89   \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!te\+\_\+pares@{te\+\_\+pares}}
+\index{te\+\_\+pares@{te\+\_\+pares}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{te\+\_\+pares(mapiterator a)}{te_pares(mapiterator a)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::te\+\_\+pares (
+\begin{DoxyParamCaption}
+\item[{{\bf mapiterator}}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a03e79690411d8ca8aa7d1e5646ca1c19}{}\label{classpoblacio_a03e79690411d8ca8aa7d1e5646ca1c19}
+
+
+Retorna cert si l\textquotesingle{}individu te pares operacio privada ja que treballem amb mapiterator. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retornem cert si l\textquotesingle{}individu apuntat per el mapiterator te pares 
+\end{DoxyPostcond}
+
+
+Definición en la línea 95 del archivo poblacio.\+hh.
+
+
+\begin{DoxyCode}
+95                                 \{
+96       \textcolor{keywordflow}{return} (*a).second.pare != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+97     \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!es\+\_\+antecesor\+\_\+aux@{es\+\_\+antecesor\+\_\+aux}}
+\index{es\+\_\+antecesor\+\_\+aux@{es\+\_\+antecesor\+\_\+aux}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{es\+\_\+antecesor\+\_\+aux(mapiterator low, string high)}{es_antecesor_aux(mapiterator low, string high)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::es\+\_\+antecesor\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{{\bf mapiterator}}]{low, }
+\item[{string}]{high}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a068248eaa6d1090e4114e2c799c850b1}{}\label{classpoblacio_a068248eaa6d1090e4114e2c799c850b1}
+
+
+Retorna cert si el nom de l\textquotesingle{}individu high es un antecesor de l\textquotesingle{}individu low operacio privada ja que treballem amb mapiterator\textquotesingle{}s. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retornem cert si l\textquotesingle{}individu al qual correspon el nom high es antecesor de low. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 103 del archivo poblacio.\+hh.
+
+
+\begin{DoxyCode}
+103                                                        \{
+104       \textcolor{keywordtype}{bool} b;
+105       \textcolor{keywordflow}{if}(low == this->\hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end()) b = \textcolor{keyword}{false}; \textcolor{comment}{//si no el trobem retornem fals}
+106       \textcolor{keywordflow}{else} b = ((*low).first == high or \hyperlink{classpoblacio_a068248eaa6d1090e4114e2c799c850b1}{es\_antecesor\_aux}((*low).second.pare, high) or 
+      \hyperlink{classpoblacio_a068248eaa6d1090e4114e2c799c850b1}{es\_antecesor\_aux}((*low).second.mare, high));
+107       \textcolor{comment}{//^si el nom es igual al que busquem retornem cert i no fem les crides recursives i sino doncs mirem
+       a partir del pare i despres de la mare}
+108     return b;
+109     \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!completar@{completar}}
+\index{completar@{completar}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{completar(queue$<$ string $>$ \&to\+\_\+print, mapiterator actual)}{completar(queue< string > &to_print, mapiterator actual)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::completar (
+\begin{DoxyParamCaption}
+\item[{queue$<$ string $>$ \&}]{to\+\_\+print, }
+\item[{{\bf mapiterator}}]{actual}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a90b5d501f5b346aecb3c1ba170b3fb6f}{}\label{classpoblacio_a90b5d501f5b346aecb3c1ba170b3fb6f}
+
+
+Donada una cua i un mapiterador, la plenem completant l\textquotesingle{}arbre geneolofic de l\textquotesingle{}individu actual. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+to\+\_\+print ha quedat plenada amb l\textquotesingle{}arbre geneologic de l\textquotesingle{}individu 
+\end{DoxyPostcond}
+
+
+Definición en la línea 115 del archivo poblacio.\+hh.
+
+
+\begin{DoxyCode}
+115                                                               \{
+116       \textcolor{keywordflow}{if}(actual != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+117         \textcolor{comment}{//afegim lelement a la cua entre asteriscs per a imprimirlo com a nou}
+118         to\_print.push(\textcolor{stringliteral}{"*"}+(*actual).first+\textcolor{stringliteral}{"*"});
+119         \textcolor{comment}{//realitzem crides recursives per al pare i la mare respectant el preordre}
+120         (*this).completar(to\_print, (*actual).second.pare);
+121         (*this).completar(to\_print, (*actual).second.mare);
+122       \}\textcolor{keywordflow}{else}\{
+123         \textcolor{comment}{//si es un valor null afegil un $ i aturem les crides recursives (cas base)}
+124         to\_print.push(\textcolor{stringliteral}{"$"});
+125       \}
+126     \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!completar\+\_\+arbre\+\_\+aux@{completar\+\_\+arbre\+\_\+aux}}
+\index{completar\+\_\+arbre\+\_\+aux@{completar\+\_\+arbre\+\_\+aux}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{completar\+\_\+arbre\+\_\+aux(queue$<$ string $>$ \&to\+\_\+print, mapiterator actual)}{completar_arbre_aux(queue< string > &to_print, mapiterator actual)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::completar\+\_\+arbre\+\_\+aux (
+\begin{DoxyParamCaption}
+\item[{queue$<$ string $>$ \&}]{to\+\_\+print, }
+\item[{{\bf mapiterator}}]{actual}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a85493b733f10c8a276986a5a32404352}{}\label{classpoblacio_a85493b733f10c8a276986a5a32404352}
+
+
+Retorna cert si donat un arbre en preordre es subarbre de l\textquotesingle{}inidividu actual, a mes a mes, el completem. 
+
+\begin{DoxyPrecond}{Precondición}
+Al canal estandard de entrada hi ha un arbre en preordre 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retornem cert si l\textquotesingle{}arbre en preordre introduit es subarbre i el completem en tots casos 
+\end{DoxyPostcond}
+
+
+Definición en la línea 133 del archivo poblacio.\+hh.
+
+
+\begin{DoxyCode}
+133                                                                         \{
+134       \textcolor{comment}{//rebem el element}
+135       \textcolor{keywordtype}{string} s;
+136       cin>>s;
+137       \textcolor{keywordtype}{bool} b;
+138       \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"$"})\{
+139         \textcolor{comment}{//cas base, completem l'arbre a partir de l'element null i retornem cert}
+140         \hyperlink{classpoblacio_a90b5d501f5b346aecb3c1ba170b3fb6f}{completar}(to\_print, actual);
+141         b = \textcolor{keyword}{true};
+142       \}\textcolor{keywordflow}{else}\{
+143         \textcolor{comment}{//afegim l'element actual a la cua}
+144         \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} mare, pare;
+145         to\_print.push(s);
+146         \textcolor{comment}{//per a consumir dades i evitar errors de execucio}
+147         \textcolor{keywordflow}{if}(actual == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+148           mare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();  \textcolor{comment}{//per consumir dades:)}
+149           pare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+150           \textcolor{comment}{//retornem fals ja que l'arbre de individus s'ha acabat pero seguim rebent dades}
+151           b = \textcolor{keyword}{false};
+152         \}
+153         \textcolor{keywordflow}{else}\{
+154           mare = (*actual).second.mare;
+155           pare = (*actual).second.pare;
+156           \textcolor{comment}{//comprovem si l'element actual coincideix amb el seu nom}
+157           b = (*actual).first == s;
+158         \}
+159         \textcolor{comment}{//realitzem les crides comparades amb el boolea b en aquest ordre per a seguir consumint dades i
+       mirant primer el pare i despres la mare}
+160         b = \hyperlink{classpoblacio_a85493b733f10c8a276986a5a32404352}{completar\_arbre\_aux}(to\_print, pare) and b;
+161         b = \hyperlink{classpoblacio_a85493b733f10c8a276986a5a32404352}{completar\_arbre\_aux}(to\_print, mare) and b;
+162       \}
+163 
+164       return b;
+165     \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!consultar\+\_\+individu@{consultar\+\_\+individu}}
+\index{consultar\+\_\+individu@{consultar\+\_\+individu}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{consultar\+\_\+individu(string nom)}{consultar_individu(string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf individu} poblacio\+::consultar\+\_\+individu (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a30ec7988306978a608ab11062069e6e1}{}\label{classpoblacio_a30ec7988306978a608ab11062069e6e1}
+
+
+Consultem un individu. 
+
+\begin{DoxyPrecond}{Precondición}
+el nom de l\textquotesingle{}individu esta al map 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retornem l\textquotesingle{}individu al qual li correspon el nom 
+\end{DoxyPostcond}
+
+
+Definición en la línea 9 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+9                                                \{
+10     \textcolor{keywordflow}{return} \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}[nom].in;
+11 
+12 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!afegir\+\_\+individu@{afegir\+\_\+individu}}
+\index{afegir\+\_\+individu@{afegir\+\_\+individu}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{afegir\+\_\+individu(string nom, const individu \&ind)}{afegir_individu(string nom, const individu &ind)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::afegir\+\_\+individu (
+\begin{DoxyParamCaption}
+\item[{string}]{nom, }
+\item[{const {\bf individu} \&}]{ind}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a09a516141a9a8bef9249239916894af5}{}\label{classpoblacio_a09a516141a9a8bef9249239916894af5}
+
+
+Afegim un individu al map pob. 
+
+\begin{DoxyPrecond}{Precondición}
+El parametre implicit es un individu que no esta a pob i el seu nom 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El parametre implicit esta dintre de pob sense pares i amb el seu respectiu nom 
+\end{DoxyPostcond}
+
+
+Definición en la línea 15 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+15                                                             \{
+16     \hyperlink{structfamilia}{familia} fami;
+17     fami.in = ind;
+18     fami.pare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+19     fami.mare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+20     \textcolor{comment}{//creem una familia}
+21     \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.insert(pair<string, familia>(nom, fami));
+22     \textcolor{comment}{//la introduim al mapa}
+23 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!reproduir@{reproduir}}
+\index{reproduir@{reproduir}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{reproduir(string pare, string mare, string fill, especie \&esp)}{reproduir(string pare, string mare, string fill, especie &esp)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::reproduir (
+\begin{DoxyParamCaption}
+\item[{string}]{pare, }
+\item[{string}]{mare, }
+\item[{string}]{fill, }
+\item[{{\bf especie} \&}]{esp}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a347bc063088e161813c257211d8059b9}{}\label{classpoblacio_a347bc063088e161813c257211d8059b9}
+
+
+reproduim dos individus i si es posible l\textquotesingle{}afegim al sistema 
+
+\begin{DoxyPrecond}{Precondición}
+pare i mare es poden reproduir 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+si es poden reproduir entrarem a fill al sistema mitjançant el metode de reproduccio sino retornarem error 
+\end{DoxyPostcond}
+
+
+Definición en la línea 29 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+29                                                                           \{
+30   \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} par, mar, fil;
+31   par = this->\hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(pare);
+32   mar = this->\hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(mare);
+33   fil = this->\hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(fill);
+34   \textcolor{comment}{//busquem els individus al map}
+35 
+36   \textcolor{keywordflow}{if}(this->\hyperlink{classpoblacio_ad8651d82e2eb8863e853d57d9b8b9985}{reproduccio\_posible}(par, mar, fil))\{ \textcolor{comment}{//comprovem si la reproduccio es
+       possible}
+37     \hyperlink{classindividu}{individu} ind((*par).second.in, (*mar).second.in, esp); \textcolor{comment}{//cridem a la constructora per
+       reprodccio de individu}
+38     \hyperlink{structfamilia}{familia} fam;
+39     fam.pare = par;
+40     fam.mare = mar;
+41     fam.in = ind;
+42     \textcolor{comment}{//generem la familia de l'individu}
+43     \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.insert(pair<string, familia>(fill, fam)); \textcolor{comment}{//l'insertem al mapa}
+44   \}\textcolor{keywordflow}{else}\{
+45     \textcolor{comment}{//en el cas que la reproduccio no sigui posible, consumim dades}
+46     \textcolor{keywordtype}{int} inutil;
+47     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<(esp.\hyperlink{classespecie_a16cbac301660254cf39ef7f51690e507}{getN}()+1); ++i) cin>>inutil>>inutil>>inutil;
+48   \}
+49 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!esta\+\_\+individu@{esta\+\_\+individu}}
+\index{esta\+\_\+individu@{esta\+\_\+individu}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{esta\+\_\+individu(string nom)}{esta_individu(string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::esta\+\_\+individu (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}{}\label{classpoblacio_a9c6fe58f2cbd06574070df2ef4076015}
+
+
+Busquem un individu al sistema. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+retornem cert si hi ha un individu amb el nom, fals, si no. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 25 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+25                                       \{
+26     \textcolor{keywordflow}{return} \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(nom) != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+27 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!completar\+\_\+arbre@{completar\+\_\+arbre}}
+\index{completar\+\_\+arbre@{completar\+\_\+arbre}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{completar\+\_\+arbre()}{completar_arbre()}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::completar\+\_\+arbre (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a1e30be9019dcb194171228c41284117f}{}\label{classpoblacio_a1e30be9019dcb194171228c41284117f}
+
+
+llegim un arbre diem si es o no subarbre de l\textquotesingle{}arbre geneologic d\textquotesingle{}algun individu i si ho es el completem marcant els nous 
+
+\begin{DoxyPrecond}{Precondición}
+rebem un arbre amb noms d\textquotesingle{}individus en preordre 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+ha quedat escrit en preordre el nom dels individus de l\textquotesingle{}arbre complret si es que era subarbre 
+\end{DoxyPostcond}
+
+
+Definición en la línea 90 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+90                               \{
+91   \textcolor{keywordtype}{string} s;
+92   cin>>s;
+93   cout<<\textcolor{stringliteral}{" "}<<s<<endl;
+94   \textcolor{comment}{//llegim el primer invidividu per a inicialitzar el algoritme}
+95   \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} m = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(s);
+96   \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} mare, pare;
+97   \textcolor{keywordflow}{if}(m != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+98     mare = (*m).second.mare;
+99     pare = (*m).second.pare;
+100   \}\textcolor{keywordflow}{else}\{   \textcolor{comment}{//per seguretat i evitar errors de execucio}
+101     mare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+102     pare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+103   \}
+104   queue<string> to\_print;  \textcolor{comment}{//inicialitzem la cua on anirem posant els noms a imprimir de l'arbre en
+       preordre}
+105   to\_print.push(s); \textcolor{comment}{//posem l'element arrel, es a dir, el primer}
+106   \textcolor{keywordtype}{bool} b;
+107   \textcolor{comment}{//fem les crides a les funcions recursives, primer el pare i despres la mare, i per ultim comprovem que
+       l'individu no hi sigui al sistema, (ja que em de consumir les dades)}
+108   \textcolor{keywordflow}{if}(s != \textcolor{stringliteral}{"$"}) b = (*this).completar\_arbre\_aux(to\_print, pare) and (*this).completar\_arbre\_aux(to\_print, 
+      mare) and m != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end();
+109   cout<<\textcolor{stringliteral}{" "};
+110   \textcolor{comment}{//si es arbre l'imprimim}
+111   \textcolor{keywordflow}{if}(b)\{
+112     \textcolor{keywordtype}{int} tam = to\_print.size();
+113     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<tam; ++i)\{
+114       cout<<\textcolor{stringliteral}{" "}<<to\_print.front();
+115       to\_print.pop();
+116     \}
+117     cout<<endl;
+118   \textcolor{comment}{//sino imprimim error}
+119   \}\textcolor{keywordflow}{else}\{
+120     cout<<\textcolor{stringliteral}{" no es arbol parcial"}<<endl;
+121   \}
+122 
+123 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!son\+\_\+antecesors@{son\+\_\+antecesors}}
+\index{son\+\_\+antecesors@{son\+\_\+antecesors}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{son\+\_\+antecesors(string a, string b)}{son_antecesors(string a, string b)}}]{\setlength{\rightskip}{0pt plus 5cm}bool poblacio\+::son\+\_\+antecesors (
+\begin{DoxyParamCaption}
+\item[{string}]{a, }
+\item[{string}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a0002a245d187017cf1af34b364c176a0}{}\label{classpoblacio_a0002a245d187017cf1af34b364c176a0}
+
+
+Busquem si els elements son antecesors. 
+
+\begin{DoxyPrecond}{Precondición}
+a i b son noms d\textquotesingle{}individus dintre del sistea 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Retornem cert si a es antecesor de b o b es antecesor de a, fals eb altres casos 
+\end{DoxyPostcond}
+
+
+Definición en la línea 80 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+80                                                \{
+81   \textcolor{comment}{//per a comprovar si son antecesors em de mirar que un no estigui en el arbre genealogic de l'altre i
+       viceversa}
+82   \textcolor{comment}{//busquem els individus i fem crides a les funcions recursives que ho comproven}
+83     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} pare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(a);
+84     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} mare = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(b);
+85 
+86     \textcolor{keywordflow}{return} (*this).es\_antecesor\_aux(pare, b) or (*this).es\_antecesor\_aux(mare, a); \textcolor{comment}{//inmersio!}
+87 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!llegir@{llegir}}
+\index{llegir@{llegir}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{llegir(especie \&esp)}{llegir(especie &esp)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::llegir (
+\begin{DoxyParamCaption}
+\item[{{\bf especie} \&}]{esp}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a02fda63e8b0144ce197764753778a201}{}\label{classpoblacio_a02fda63e8b0144ce197764753778a201}
+
+
+Llegim una població inicial. 
+
+\begin{DoxyPrecond}{Precondición}
+El conjunt es buit, rebem una M i seguidament la informació de M individus 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+els M individus queden registrats en al map pob sense pares. 
+\end{DoxyPostcond}
+
+
+Definición en la línea 67 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+67                                 \{
+68   \textcolor{comment}{//inicialitzaco del sistema poblacio, rebem m individus i els llegim i els afegim al sistema}
+69     \textcolor{keywordtype}{int} m;
+70     cin>>m;
+71     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<m; ++i)\{
+72         \textcolor{keywordtype}{string} nom;
+73         cin>>nom;
+74         \hyperlink{classindividu}{individu} in;
+75         in.\hyperlink{classindividu_a6cfcb4f2472be86eb3416da90dc721be}{llegir}(esp);
+76         (*this).afegir\_individu(nom, in);
+77     \}
+78 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!escriure@{escriure}}
+\index{escriure@{escriure}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{escriure()}{escriure()}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::escriure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}{}\label{classpoblacio_aef82aca848d299bc5eff6d6b479a5081}
+
+
+Escribim tots els elements per ordre alfabetic. 
+
+\begin{DoxyPrecond}{Precondición}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+El conjunt queda escrit al canal estandard de sortida per ordre alfabetic 
+\end{DoxyPostcond}
+
+
+Definición en la línea 51 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+51                        \{
+52     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} it;
+53     \textcolor{comment}{//recorrem tot el map imprimint el seu sexe, individus, pare i mare en un for}
+54     \textcolor{keywordflow}{for}(it = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.begin(); it != \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end(); ++it)\{
+55         cout<<\textcolor{stringliteral}{"  "}<<(*it).first<<\textcolor{stringliteral}{" "}<<\textcolor{stringliteral}{"X"};
+56         \textcolor{keywordflow}{if}(!(*it).second.in.consultar\_sexe()) cout<<\textcolor{stringliteral}{"Y"};
+57         \textcolor{keywordflow}{else} cout<<\textcolor{stringliteral}{"X"};
+58         cout<<\textcolor{stringliteral}{" ("};
+59         \textcolor{keywordflow}{if}((*it).second.pare == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end() or (*it).second.mare == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end())\{
+60             cout<<\textcolor{stringliteral}{"$,$)"}<<endl;
+61         \}\textcolor{keywordflow}{else}\{
+62             cout<<(*((*it).second.pare)).first<<\textcolor{stringliteral}{","}<<(*((*it).second.mare)).first<<\textcolor{stringliteral}{")"}<<endl;
+63         \}
+64     \}
+65 \}
+\end{DoxyCode}
+\index{poblacio@{poblacio}!escriure\+\_\+arbre\+\_\+geneologic@{escriure\+\_\+arbre\+\_\+geneologic}}
+\index{escriure\+\_\+arbre\+\_\+geneologic@{escriure\+\_\+arbre\+\_\+geneologic}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{escriure\+\_\+arbre\+\_\+geneologic(string nom)}{escriure_arbre_geneologic(string nom)}}]{\setlength{\rightskip}{0pt plus 5cm}void poblacio\+::escriure\+\_\+arbre\+\_\+geneologic (
+\begin{DoxyParamCaption}
+\item[{string}]{nom}
+\end{DoxyParamCaption}
+)}\hypertarget{classpoblacio_a30e1c829999a403012ce09172461d656}{}\label{classpoblacio_a30e1c829999a403012ce09172461d656}
+
+
+Escribim l\textquotesingle{}arbre geneologic de l\textquotesingle{}individu. 
+
+\begin{DoxyPrecond}{Precondición}
+cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondición}
+Ha quedat escrit l\textquotesingle{}arbre geneologic de l\textquotesingle{}individu ordenat per nivells 
+\end{DoxyPostcond}
+
+
+Definición en la línea 125 del archivo poblacio.\+cc.
+
+
+\begin{DoxyCode}
+125                                                   \{
+126   \textcolor{comment}{//busquem l'individu i mirem si hi es o no}
+127   \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} ind = \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.find(nom);
+128   \textcolor{keywordflow}{if}(ind == \hyperlink{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{pob}.end()) cout<<\textcolor{stringliteral}{"  error"}<<endl;
+129   \textcolor{keywordflow}{else}\{
+130     \textcolor{comment}{//inicialitzem la cua i afegim el primer individu}
+131   queue<mapiterator> to\_print;
+132   to\_print.push(ind);
+133   \textcolor{keywordtype}{int} nivell = 0;
+134   \textcolor{comment}{//mentre la cua no sigui buida(no quedin antecesors) imprimim els individus actuals amb el seu nivell i
+       afegim els seus antecesors}
+135   \textcolor{keywordflow}{while}(!to\_print.empty())\{
+136     cout<<\textcolor{stringliteral}{"  Nivel "}<<nivell<<\textcolor{stringliteral}{":"};
+137     \textcolor{keywordtype}{int} tam  = to\_print.size();
+138     \hyperlink{classpoblacio_a52c3d96b08f7679f27487e7499185ed1}{mapiterator} act;
+139     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<tam; ++i)\{
+140       act = to\_print.front();
+141       cout<<\textcolor{stringliteral}{" "}<<(*act).first;
+142       \textcolor{keywordflow}{if}((*this).te\_pares(act))\{
+143         to\_print.push((*act).second.pare);
+144         to\_print.push((*act).second.mare);
+145       \}
+146       to\_print.pop();
+147     \}
+148     ++nivell;
+149     cout<<endl;
+150   \}
+151   \}
+152 
+153 
+154 \}
+\end{DoxyCode}
+
+
+\subsection{Documentación de los datos miembro}
+\index{poblacio@{poblacio}!pob@{pob}}
+\index{pob@{pob}!poblacio@{poblacio}}
+\subsubsection[{\texorpdfstring{pob}{pob}}]{\setlength{\rightskip}{0pt plus 5cm}map$<$string, {\bf familia}$>$ poblacio\+::pob\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classpoblacio_a7ecb70033b151a937143b07d489c4c17}{}\label{classpoblacio_a7ecb70033b151a937143b07d489c4c17}
+
+
+Mapa on guardem els individus amb els seus noms. 
+
+
+
+Definición en la línea 39 del archivo poblacio.\+hh.
+
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{poblacio_8hh}{poblacio.\+hh}\item 
+\hyperlink{poblacio_8cc}{poblacio.\+cc}\end{DoxyCompactItemize}

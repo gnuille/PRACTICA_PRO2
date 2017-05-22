@@ -1,0 +1,312 @@
+\hypertarget{classespecie}{}\section{Referència de la Classe especie}
+\label{classespecie}\index{especie@{especie}}
+
+
+Guardem la informacio genetica de la especie.  
+
+
+\subsection*{Mètodes públics}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classespecie_ac172ff6414744de38a9995de5b8960e6}{especie} ()
+\begin{DoxyCompactList}\small\item\em Constructora de la clase especie. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_a1af7a5322803c26b43fc5b83e089f6d1}{getN} () const 
+\begin{DoxyCompactList}\small\item\em Obtenim el nombre de cromosomes. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_aeafc7d55dc12d3a0337740884117614c}{getl} (int i) const 
+\begin{DoxyCompactList}\small\item\em Obtenir la llargada del cromosoma c\+\_\+i. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_a45ce91dbe80e60d7498e672dd487d7ed}{getly} () const 
+\begin{DoxyCompactList}\small\item\em Obtenir la llargada del cromosoma sexual Y. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_a884d4a0b074c42391c6e4295666047e0}{getlx} () const 
+\begin{DoxyCompactList}\small\item\em Obtenir la llargada del cromosoma sexual X. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_a712aef06aad58b482d136980200600f5}{getl0} () const 
+\begin{DoxyCompactList}\small\item\em Obtenir la part comuna dels cromosomes sexuals. \end{DoxyCompactList}\item 
+void \hyperlink{classespecie_af1a08ff40fdb79abb1d78c06b8131306}{llegir} ()
+\begin{DoxyCompactList}\small\item\em Definim els parametres de la especie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atributs Privats}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classespecie_a3333db40d4af2c0073d50afea08e0296}{N}
+\begin{DoxyCompactList}\small\item\em Nombre de cromosomes. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classespecie_a754d7eefb82d1ebe3f573cff16dd43ee}{l}
+\begin{DoxyCompactList}\small\item\em Vector que emagatzema la longitud dels cromosomes. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_ad6993a4730779e367c432cce91780895}{ly}
+\begin{DoxyCompactList}\small\item\em Longitud del cromosoma sexual Y. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_af620813fbc24dd91e5a25d38b5847bf8}{lx}
+\begin{DoxyCompactList}\small\item\em Longitud del cromosoma sexual X. \end{DoxyCompactList}\item 
+int \hyperlink{classespecie_a7e4448f0f61a573753aa7000ad073982}{l0}
+\begin{DoxyCompactList}\small\item\em Part comuna entre els cromosomes X i Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripció Detallada}
+Guardem la informacio genetica de la especie. 
+
+Definició a la línia 12 del fitxer especie.\+hh.
+
+
+
+\subsection{Documentació del Constructor i el Destructor}
+\index{especie@{especie}!especie@{especie}}
+\index{especie@{especie}!especie@{especie}}
+\subsubsection[{\texorpdfstring{especie()}{especie()}}]{\setlength{\rightskip}{0pt plus 5cm}especie\+::especie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classespecie_ac172ff6414744de38a9995de5b8960e6}{}\label{classespecie_ac172ff6414744de38a9995de5b8960e6}
+
+
+Constructora de la clase especie. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Obtenin una especie sense informació 
+\end{DoxyPostcond}
+
+
+Definició a la línia 9 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+9                 \{
+10 
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Documentació de les Funcions Membre}
+\index{especie@{especie}!getN@{getN}}
+\index{getN@{getN}!especie@{especie}}
+\subsubsection[{\texorpdfstring{get\+N() const }{getN() const }}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::getN (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classespecie_a1af7a5322803c26b43fc5b83e089f6d1}{}\label{classespecie_a1af7a5322803c26b43fc5b83e089f6d1}
+
+
+Obtenim el nombre de cromosomes. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El valor retornat es N (nombre de cromosomes) 
+\end{DoxyPostcond}
+
+
+Definició a la línia 14 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+14                        \{
+15     \textcolor{keywordflow}{return} \hyperlink{classespecie_a3333db40d4af2c0073d50afea08e0296}{N};
+16 \}
+\end{DoxyCode}
+\index{especie@{especie}!getl@{getl}}
+\index{getl@{getl}!especie@{especie}}
+\subsubsection[{\texorpdfstring{getl(int i) const }{getl(int i) const }}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::getl (
+\begin{DoxyParamCaption}
+\item[{int}]{i}
+\end{DoxyParamCaption}
+) const}\hypertarget{classespecie_aeafc7d55dc12d3a0337740884117614c}{}\label{classespecie_aeafc7d55dc12d3a0337740884117614c}
+
+
+Obtenir la llargada del cromosoma c\+\_\+i. 
+
+\begin{DoxyPrecond}{Precondició}
+0$<$i$<$N 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El valor retornat es la llargada del cromosoma de posicio el P.\+I 
+\end{DoxyPostcond}
+
+
+Definició a la línia 18 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+18                             \{
+19     \textcolor{keywordflow}{return} \hyperlink{classespecie_a754d7eefb82d1ebe3f573cff16dd43ee}{l}[i];
+20 \}
+\end{DoxyCode}
+\index{especie@{especie}!getly@{getly}}
+\index{getly@{getly}!especie@{especie}}
+\subsubsection[{\texorpdfstring{getly() const }{getly() const }}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::getly (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classespecie_a45ce91dbe80e60d7498e672dd487d7ed}{}\label{classespecie_a45ce91dbe80e60d7498e672dd487d7ed}
+
+
+Obtenir la llargada del cromosoma sexual Y. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El valor retornat es la llargada del cromosoma sexual Y 
+\end{DoxyPostcond}
+
+
+Definició a la línia 22 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+22                         \{
+23     \textcolor{keywordflow}{return} \hyperlink{classespecie_ad6993a4730779e367c432cce91780895}{ly};
+24 \}
+\end{DoxyCode}
+\index{especie@{especie}!getlx@{getlx}}
+\index{getlx@{getlx}!especie@{especie}}
+\subsubsection[{\texorpdfstring{getlx() const }{getlx() const }}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::getlx (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classespecie_a884d4a0b074c42391c6e4295666047e0}{}\label{classespecie_a884d4a0b074c42391c6e4295666047e0}
+
+
+Obtenir la llargada del cromosoma sexual X. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+El valor retornat es la llargada del cromosoma sexual X 
+\end{DoxyPostcond}
+
+
+Definició a la línia 26 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+26                         \{
+27     \textcolor{keywordflow}{return} \hyperlink{classespecie_af620813fbc24dd91e5a25d38b5847bf8}{lx};
+28 \}
+\end{DoxyCode}
+\index{especie@{especie}!getl0@{getl0}}
+\index{getl0@{getl0}!especie@{especie}}
+\subsubsection[{\texorpdfstring{getl0() const }{getl0() const }}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::getl0 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classespecie_a712aef06aad58b482d136980200600f5}{}\label{classespecie_a712aef06aad58b482d136980200600f5}
+
+
+Obtenir la part comuna dels cromosomes sexuals. 
+
+\begin{DoxyPrecond}{Precondició}
+Cert 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Retornem el parametre l0 
+\end{DoxyPostcond}
+
+
+Definició a la línia 30 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+30                         \{
+31     \textcolor{keywordflow}{return} \hyperlink{classespecie_a7e4448f0f61a573753aa7000ad073982}{l0};
+32 \}
+\end{DoxyCode}
+\index{especie@{especie}!llegir@{llegir}}
+\index{llegir@{llegir}!especie@{especie}}
+\subsubsection[{\texorpdfstring{llegir()}{llegir()}}]{\setlength{\rightskip}{0pt plus 5cm}void especie\+::llegir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classespecie_af1a08ff40fdb79abb1d78c06b8131306}{}\label{classespecie_af1a08ff40fdb79abb1d78c06b8131306}
+
+
+Definim els parametres de la especie. 
+
+\begin{DoxyPrecond}{Precondició}
+Al canal estandard d\textquotesingle{}entrada tenim\+: N(nombre de cromosomes), li longituds(i = N), longitud dels cromosomes sexual x (lx) e y (ly) 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondició}
+Aquetses dades pasen a ser els parametres de la especie 
+\end{DoxyPostcond}
+
+
+Definició a la línia 35 del fitxer especie.\+cc.
+
+
+\begin{DoxyCode}
+35                     \{
+36     cin>>\hyperlink{classespecie_a3333db40d4af2c0073d50afea08e0296}{N};
+37     cin>>\hyperlink{classespecie_a7e4448f0f61a573753aa7000ad073982}{l0};
+38     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i<\hyperlink{classespecie_a3333db40d4af2c0073d50afea08e0296}{N}; ++i)\{
+39         \textcolor{keywordtype}{int} a;
+40   cin>>a;
+41   \hyperlink{classespecie_a754d7eefb82d1ebe3f573cff16dd43ee}{l}.push\_back(a);
+42     \}
+43     cin>>\hyperlink{classespecie_af620813fbc24dd91e5a25d38b5847bf8}{lx};
+44     cin>>\hyperlink{classespecie_ad6993a4730779e367c432cce91780895}{ly};
+45 
+46 \}
+\end{DoxyCode}
+
+
+\subsection{Documentació de les Dades Membre}
+\index{especie@{especie}!N@{N}}
+\index{N@{N}!especie@{especie}}
+\subsubsection[{\texorpdfstring{N}{N}}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::N\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classespecie_a3333db40d4af2c0073d50afea08e0296}{}\label{classespecie_a3333db40d4af2c0073d50afea08e0296}
+
+
+Nombre de cromosomes. 
+
+
+
+Definició a la línia 19 del fitxer especie.\+hh.
+
+\index{especie@{especie}!l@{l}}
+\index{l@{l}!especie@{especie}}
+\subsubsection[{\texorpdfstring{l}{l}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$int$>$ especie\+::l\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classespecie_a754d7eefb82d1ebe3f573cff16dd43ee}{}\label{classespecie_a754d7eefb82d1ebe3f573cff16dd43ee}
+
+
+Vector que emagatzema la longitud dels cromosomes. 
+
+
+
+Definició a la línia 21 del fitxer especie.\+hh.
+
+\index{especie@{especie}!ly@{ly}}
+\index{ly@{ly}!especie@{especie}}
+\subsubsection[{\texorpdfstring{ly}{ly}}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::ly\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classespecie_ad6993a4730779e367c432cce91780895}{}\label{classespecie_ad6993a4730779e367c432cce91780895}
+
+
+Longitud del cromosoma sexual Y. 
+
+
+
+Definició a la línia 23 del fitxer especie.\+hh.
+
+\index{especie@{especie}!lx@{lx}}
+\index{lx@{lx}!especie@{especie}}
+\subsubsection[{\texorpdfstring{lx}{lx}}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::lx\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classespecie_af620813fbc24dd91e5a25d38b5847bf8}{}\label{classespecie_af620813fbc24dd91e5a25d38b5847bf8}
+
+
+Longitud del cromosoma sexual X. 
+
+
+
+Definició a la línia 25 del fitxer especie.\+hh.
+
+\index{especie@{especie}!l0@{l0}}
+\index{l0@{l0}!especie@{especie}}
+\subsubsection[{\texorpdfstring{l0}{l0}}]{\setlength{\rightskip}{0pt plus 5cm}int especie\+::l0\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classespecie_a7e4448f0f61a573753aa7000ad073982}{}\label{classespecie_a7e4448f0f61a573753aa7000ad073982}
+
+
+Part comuna entre els cromosomes X i Y. 
+
+
+
+Definició a la línia 27 del fitxer especie.\+hh.
+
+
+
+La documentació d\textquotesingle{}aquesta classe es va generar a partir dels següents fitxers\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{especie_8hh}{especie.\+hh}\item 
+\hyperlink{especie_8cc}{especie.\+cc}\end{DoxyCompactItemize}

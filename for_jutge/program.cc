@@ -1,5 +1,23 @@
+/** @mainpage
+    Benvingut a la especificació de la practica de PRO2!
+    La solució proposada es mitjançant un diseny modular amb una clase població que
+    conte els individus, una clase individu que conte la informació genetica i una clase cromosoma que conte els gens.
+
+    Practica realitzada per Guillem Ramírez Miranda.
+*/
+
+/** @file pro2.cc
+
+    @brief Programa principal
+
+*/
+
+
 #include "poblacio.hh"
+#include "individu.hh" //redundant necesari per al diagrama
+
 using namespace std;
+
 enum string_code{
     addIn,
     reproduccion,
@@ -7,7 +25,7 @@ enum string_code{
     completar_arbol,
     escribir_pob,
     escribir_gen,
-	  def
+    def
 };
 
 string_code hashit (string const& inString) {
@@ -32,25 +50,24 @@ int main(){
 
     while(op != "acabar"){
         switch(hashit(op)){
-            case addIn:{  //funciona !:)
+            case addIn:{  
 		            string name;
 		            cin>>name;
 		            cout<<" "<<name<<endl;
 		            individu in;
 		            in.llegir(esp);
-                if(pob.esta_individu(name)) cout<<"  error"<<endl;
+                    if(pob.esta_individu(name)) cout<<"  error"<<endl;
 		            else pob.afegir_individu(name, in);
-
 		            break;
 	          }
 	          case reproduccion:{
-	              string mare, pare, fil;  //funciona !:)
+                    string mare, pare, fil;  
 		            cin>>mare>>pare>>fil;
 		            cout<<" "<<mare<<" "<<pare<<" "<<fil<<endl;
 		            pob.reproduir(pare, mare, fil, esp);
 		            break;
 	          }
-    	      case escribir_arbol:{  //funciona !:)
+    	      case escribir_arbol:{  
 		            string nom;
 		            cin>>nom;
 		            cout<<" "<<nom<<endl;
@@ -62,18 +79,18 @@ int main(){
 		            pob.completar_arbre();
 		            break;
 	         }
-	          case escribir_pob:{  //funciona !:)
-					      cout<<endl;
+	          case escribir_pob:{  
+                    cout<<endl;
 		            pob.escriure();
 		            break;
 	         }
-	          case escribir_gen:{  //funciona !:)
-					      string nom;
-					      cin>>nom;
-					      cout<<" "<<nom<<endl;
-					      if(pob.esta_individu(nom)) pob.consultar_individu(nom).escriure_genotip();
-					      else cout<<"  error"<<endl;
-					      break;
+	          case escribir_gen:{  
+                    string nom;
+                    cin>>nom;
+                    cout<<" "<<nom<<endl;
+                    if(pob.esta_individu(nom)) pob.consultar_individu(nom).escriure_genotip();
+                    else cout<<"  error"<<endl;
+                    break;
 	        }
 	         default:
 		            break;

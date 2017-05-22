@@ -1,0 +1,98 @@
+#joc de proves centrat en arbres geneologics
+
+3
+4 3 3 3 
+6 5
+
+4
+a1 
+X
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1 
+1 1 1
+1 1 1
+1 1 1
+1 1 1 
+1 1 1
+
+a0 
+Y
+0 0 0 0 0 0
+0 0 0 0 0 
+0 1 0
+1 1 0
+0 0 0
+1 1 1 
+0 0 0
+1 1 1
+
+b1 
+X
+1 1 1 1 1 1
+1 1 1 1 1 1
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+
+b0
+Y
+0 0 0 0 0 0
+0 0 0 0 0 
+0 1 0
+1 1 0
+0 0 0
+1 1 1
+0 0 0
+1 1 1
+
+escribir_poblacion
+
+reproduccion_sexual
+a1 a0 c0
+1 1 1
+1 1 1 
+1 1 1
+1 1 1
+
+reproduccion_sexual
+a1 a0 c1
+1 0 1
+1 1 1
+1 1 1
+1 1 1
+ 
+reproduccion_sexual
+b1 b0 d0
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+
+reproduccion_sexual
+b1 b0 d1
+1 0 1
+1 1 1
+1 1 1
+1 1 1
+
+reproduccion_sexual
+a1 b0 e0
+1 1 1
+1 1 1
+1 1 1
+1 1 1
+
+reproduccion_sexual
+c1 e0 e1
+1 0 1   #reproduccion entre hermanos 
+1 1 1
+1 1 1
+1 1 1
+
+
+
+ 

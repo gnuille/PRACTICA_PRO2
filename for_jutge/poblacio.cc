@@ -1,16 +1,120 @@
-#include<iostream>
+/** @file poblacio.cc
+    @brief Codi de la clase poblacio
+*/
+
 #include "poblacio.hh"
 using namespace std;
 
+/*PRIVADES*/ 
+bool poblacio::reproduccio_posible(mapiterator pare, mapiterator mare, mapiterator fill){
+    //comprovem que pare i mare estiguin al sistema,i que el fill no hi sigui
+		if(pare == pob.end() or mare == pob.end() or fill !=pob.end()){
+			cout<<"  error"<<endl;
+			return false;
+		}
+
+    //Comprobem els sexes del pare i la mare
+		if((*pare).second.in.consultar_sexe() or !(*mare).second.in.consultar_sexe()){
+			cout<<"  no es posible reproduccion"<<endl;
+			return false;
+		}
+
+    //mirem que no siguin germans (no tinguin ni el mateix pare ni la mateixa mare)
+		mapiterator avip = (*pare).second.pare;
+		mapiterator avim = (*mare).second.pare;
+		mapiterator aviap = (*pare).second.mare;
+		mapiterator aviam = (*mare).second.mare;
+
+		if(avip != pob.end() and avim != pob.end()){
+			if((*avip).first == (*avim).first){
+				cout<<"  no es posible reproduccion"<<endl;
+				return false;
+			}
+		}
+
+		if(aviap != pob.end() and aviam != pob.end()){
+			if((*aviap).first == (*aviam).first){
+				cout<<"  no es posible reproduccion"<<endl;
+				return false;
+			}
+		}
+
+    //finalment mirem que un no sigui antecesor de l'altre i viceversa
+		if(son_antecesors((*pare).first, (*mare).first)){
+			cout<<"  no es posible reproduccion"<<endl;
+			return false;
+		}
+    //si compleix totes les condicions retornem cert
+		return true;
+
+}
+
+bool poblacio::te_pares(mapiterator a){
+  return (*a).second.pare != pob.end();
+}
+
+bool poblacio::es_antecesor_aux(mapiterator low, string high){
+      bool b;
+      if(low == this->pob.end()) b = false; //si no el trobem retornem fals
+      else b = ((*low).first == high or es_antecesor_aux((*low).second.pare, high) or es_antecesor_aux((*low).second.mare, high));
+      //^si el nom es igual al que busquem retornem cert i no fem les crides recursives i sino doncs mirem a partir del pare i despres de la mare
+	  return b;
+}
+
+void poblacio::completar(queue<string>&to_print, mapiterator actual){
+      if(actual != pob.end()){
+        //afegim lelement a la cua entre asteriscs per a imprimirlo com a nou
+        to_print.push("*"+(*actual).first+"*");
+        //realitzem crides recursives per al pare i la mare respectant el preordre
+        (*this).completar(to_print, (*actual).second.pare);
+        (*this).completar(to_print, (*actual).second.mare);
+      }else{
+        //si es un valor null afegil un $ i aturem les crides recursives (cas base)
+        to_print.push("$");
+      }
+}
+
+bool poblacio::completar_arbre_aux(queue<string>&to_print, mapiterator actual){
+      //rebem el element
+      string s;
+      cin>>s;
+      bool b;
+      if(s == "$"){
+        //cas base, completem l'arbre a partir de l'element null i retornem cert
+        completar(to_print, actual);
+        b = true;
+      }else{
+        //afegim l'element actual a la cua
+        mapiterator mare, pare;
+        to_print.push(s);
+        //per a consumir dades i evitar errors de execucio
+        if(actual == pob.end()){
+          mare = pob.end();  //per consumir dades:)
+          pare = pob.end();
+          //retornem fals ja que l'arbre de individus s'ha acabat pero seguim rebent dades
+          b = false;
+        }
+        else{
+          mare = (*actual).second.mare;
+          pare = (*actual).second.pare;
+          //comprovem si l'element actual coincideix amb el seu nom
+          b = (*actual).first == s;
+        }
+        //realitzem les crides comparades amb el boolea b en aquest ordre per a seguir consumint dades i mirant primer el pare i despres la mare
+        b = completar_arbre_aux(to_print, pare) and b;
+        b = completar_arbre_aux(to_print, mare) and b;
+      }
+
+      return b;
+}
+/*PUBLIQUES*/
+
+/* ----Constructores---- */
 poblacio::poblacio(){
 
 }
 
-individu poblacio::consultar_individu(string nom){
-    return pob[nom].in;
-
-}
-
+/* ----Modificadores---- */
 
 void poblacio::afegir_individu(string nom, const individu&ind){
     familia fami;
@@ -22,11 +126,7 @@ void poblacio::afegir_individu(string nom, const individu&ind){
     //la introduim al mapa
 }
 
-bool poblacio::esta_individu(string nom){
-    return pob.find(nom) != pob.end();
-}
-
-void poblacio::reproduir(string pare, string mare, string fill, especie&esp){
+void poblacio::reproduir(string pare, string mare, string fill, const especie&esp){
   mapiterator par, mar, fil;
   par = this->pob.find(pare);
   mar = this->pob.find(mare);
@@ -48,44 +148,11 @@ void poblacio::reproduir(string pare, string mare, string fill, especie&esp){
   }
 }
 
-void poblacio::escriure(){
-    mapiterator it;
-    //recorrem tot el map imprimint el seu sexe, individus, pare i mare en un for
-    for(it = pob.begin(); it != pob.end(); ++it){
-        cout<<"  "<<(*it).first<<" "<<"X";
-        if(!(*it).second.in.consultar_sexe()) cout<<"Y";
-        else cout<<"X";
-        cout<<" (";
-        if((*it).second.pare == pob.end() or (*it).second.mare == pob.end()){
-            cout<<"$,$)"<<endl;
-        }else{
-            cout<<(*((*it).second.pare)).first<<","<<(*((*it).second.mare)).first<<")"<<endl;
-        }
-    }
+/* ----Consultores---- */
+
+bool poblacio::esta_individu(string nom){
+    return pob.find(nom) != pob.end();
 }
-
-void poblacio::llegir(especie&esp){
-  //inicialitzaco del sistema poblacio, rebem m individus i els llegim i els afegim al sistema
-    int m;
-    cin>>m;
-    for(int i = 0; i<m; ++i){
-        string nom;
-        cin>>nom;
-        individu in;
-        in.llegir(esp);
-        (*this).afegir_individu(nom, in);
-    }
-}
-
-bool poblacio::son_antecesors(string a, string b){
-  //per a comprovar si son antecesors em de mirar que un no estigui en el arbre genealogic de l'altre i viceversa
-  //busquem els individus i fem crides a les funcions recursives que ho comproven
-    mapiterator pare = pob.find(a);
-    mapiterator mare = pob.find(b);
-
-    return (*this).es_antecesor_aux(pare, b) or (*this).es_antecesor_aux(mare, a); //inmersio!
-}
-
 
 void poblacio::completar_arbre(){
   string s;
@@ -120,6 +187,51 @@ void poblacio::completar_arbre(){
     cout<<" no es arbol parcial"<<endl;
   }
 
+}
+
+bool poblacio::son_antecesors(string a, string b){
+  //per a comprovar si son antecesors em de mirar que un no estigui en el arbre genealogic de l'altre i viceversa
+  //busquem els individus i fem crides a les funcions recursives que ho comproven
+    mapiterator pare = pob.find(a);
+    mapiterator mare = pob.find(b);
+
+    return (*this).es_antecesor_aux(pare, b) or (*this).es_antecesor_aux(mare, a); //inmersio
+}
+
+individu poblacio::consultar_individu(string nom){
+    return pob[nom].in;
+
+}
+
+/* ----Lectura i escriptura---- */
+
+void poblacio::llegir(especie&esp){
+  //inicialitzaco del sistema poblacio, rebem m individus i els llegim i els afegim al sistema
+    int m;
+    cin>>m;
+    for(int i = 0; i<m; ++i){
+        string nom;
+        cin>>nom;
+        individu in;
+        in.llegir(esp);
+        (*this).afegir_individu(nom, in);
+    }
+}
+
+void poblacio::escriure(){
+    mapiterator it;
+    //recorrem tot el map imprimint el seu sexe, individus, pare i mare en un for
+    for(it = pob.begin(); it != pob.end(); ++it){
+        cout<<"  "<<(*it).first<<" "<<"X";
+        if(!(*it).second.in.consultar_sexe()) cout<<"Y";
+        else cout<<"X";
+        cout<<" (";
+        if((*it).second.pare == pob.end() or (*it).second.mare == pob.end()){
+            cout<<"$,$)"<<endl;
+        }else{
+            cout<<(*((*it).second.pare)).first<<","<<(*((*it).second.mare)).first<<")"<<endl;
+        }
+    }
 }
 
 void poblacio::escriure_arbre_geneologic(string nom){

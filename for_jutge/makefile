@@ -1,3 +1,4 @@
+
 OPCIONS = -D_JUDGE_ -D_GLIBCXX_DEBUG -O2 -Wall -Wextra -Werror -Wno-uninitialized -Wno-sign-compare -std=c++0x
 
 program.exe: program.o poblacio.o individu.o parell_cromosomes.o especie.o
@@ -19,5 +20,5 @@ program.o: program.cc poblacio.hh
 	g++ -c program.cc $(OPCIONS)
 
 clean:
-	rm *.o
-	rm *.exe
+	-rm *.o
+	-rm *.exe

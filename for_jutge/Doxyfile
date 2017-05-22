@@ -4,14 +4,14 @@
 # Project related configuration options
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "Laboratorio de PRO2. Experimentos en el laboratorio. "
-PROJECT_NUMBER         = "v1.0 18-05-2017"
-OUTPUT_DIRECTORY       = "./DOC_v1.0"
+PROJECT_NAME           = "Laboratori de PRO2. Experiments en el laboratori. "
+PROJECT_NUMBER         = "v3.0 22-05-2017"
+OUTPUT_DIRECTORY       = "./DOC_v3.0"
 CREATE_SUBDIRS         = NO
-OUTPUT_LANGUAGE        = Spanish
+OUTPUT_LANGUAGE        = Catalan
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
-ABBREVIATE_BRIEF       = "The $name class" \
+ABBREVIATE_BRIEF       = "The $n3me class" \
                          "The $name widget" \
                          "The $name file" \
                          is \
