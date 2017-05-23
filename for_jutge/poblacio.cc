@@ -89,7 +89,7 @@ bool poblacio::completar_arbre_aux(queue<string>&to_print, mapiterator actual){
         to_print.push(s);
         //per a consumir dades i evitar errors de execucio
         if(actual == pob.end()){
-          mare = pob.end();  //per consumir dades:)
+          mare = pob.end();  
           pare = pob.end();
           //retornem fals ja que l'arbre de individus s'ha acabat pero seguim rebent dades
           b = false;
@@ -101,9 +101,11 @@ bool poblacio::completar_arbre_aux(queue<string>&to_print, mapiterator actual){
           b = (*actual).first == s;
         }
         //realitzem les crides comparades amb el boolea b en aquest ordre per a seguir consumint dades i mirant primer el pare i despres la mare
+        
         b = completar_arbre_aux(to_print, pare) and b;
         b = completar_arbre_aux(to_print, mare) and b;
-      }
+        
+      } 
 
       return b;
 }
@@ -170,9 +172,12 @@ void poblacio::completar_arbre(){
   }
   queue<string> to_print;  //inicialitzem la cua on anirem posant els noms a imprimir de l'arbre en preordre
   to_print.push(s); //posem l'element arrel, es a dir, el primer
-  bool b;
+  bool b = false;
   //fem les crides a les funcions recursives, primer el pare i despres la mare, i per ultim comprovem que l'individu no hi sigui al sistema, (ja que em de consumir les dades)
-  if(s != "$") b = (*this).completar_arbre_aux(to_print, pare) and (*this).completar_arbre_aux(to_print, mare) and m != pob.end();
+  if(s != "$"){
+      b = (*this).completar_arbre_aux(to_print, pare);
+      b = (*this).completar_arbre_aux(to_print, mare) and b and m != pob.end() ;
+  } 
   cout<<" ";
   //si es arbre l'imprimim
   if(b){

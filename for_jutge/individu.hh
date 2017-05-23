@@ -35,7 +35,7 @@ public:
     individu();
     
     /** @brief Retornem un individu nou, fill del pare i la mare mitjançant la reproducció
-        \pre Al P.I estan el pare, la mare(on pare XY, mare XX)
+        \pre Els valors pare, mare corresponen al pare, la mare(on pare XY, mare XX) i especie indica el tamany dels 
         \post Retornem un individu nou mitjançant la reproduccio
     */
     individu(const individu&pare, const individu&mare, const especie&esp);
@@ -49,7 +49,7 @@ public:
     
      //Lectura i escriptura
     /** @brief Llegim un individu
-        \pre Al pi tenim una especie. Al canal estandard d'entrada tenim les dades de un individu.
+        \pre Especie es una especie. Al canal estandard d'entrada tenim les dades de un individu.
         \post Assignem els valors que rebem al individu
     */  
     void llegir(const especie&esp);

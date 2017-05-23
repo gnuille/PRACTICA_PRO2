@@ -5,8 +5,8 @@
 #---------------------------------------------------------------------------
 DOXYFILE_ENCODING      = UTF-8
 PROJECT_NAME           = "Laboratori de PRO2. Experiments en el laboratori. "
-PROJECT_NUMBER         = "v3.0 22-05-2017"
-OUTPUT_DIRECTORY       = "./DOC_v3.0"
+PROJECT_NUMBER         = "v3.5 23-05-2017"
+OUTPUT_DIRECTORY       = "../DOC_v3.5"
 CREATE_SUBDIRS         = NO
 OUTPUT_LANGUAGE        = Catalan
 BRIEF_MEMBER_DESC      = YES

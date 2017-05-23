@@ -1,0 +1,24 @@
+escribir_poblacion
+  a0 XY ($,$)
+  a1 XX ($,$)
+  b0 XY ($,$)
+  b1 XX ($,$)
+reproduccion_sexual a1 a0 c0
+reproduccion_sexual a1 a0 c1
+reproduccion_sexual b1 b0 d0
+reproduccion_sexual b1 b0 d1
+reproduccion_sexual c1 d0 e0
+reproduccion_sexual b1 e0 e1
+  no es posible reproduccion
+anadir_individuo e1
+reproduccion_sexual e1 e0 f0
+reproduccionsexualc1d0f1101111111111reproduccionsexualf1e0nemo101111111111escribir_arbol_genealogico f0
+  Nivel 0: f0
+  Nivel 1: e0 e1
+  Nivel 2: d0 c1
+  Nivel 3: b0 b1 a0 a1
+escribir_arbol_genealogico nemo
+  error
+completar_arbol_genealogico f0
+  no es arbol parcial
+acabar

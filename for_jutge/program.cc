@@ -7,18 +7,17 @@
 */
 
 /** @file pro2.cc
-
     @brief Programa principal
-
 */
-
 
 #include "poblacio.hh"
 #include "individu.hh" //redundant necesari per al diagrama
-
+#include "especie.hh"  //redundant pero necesari per el diagrama
 using namespace std;
 
+
 enum string_code{
+    //enum per a usar el switch amb strings
     addIn,
     reproduccion,
     escribir_arbol,
@@ -28,7 +27,9 @@ enum string_code{
     def
 };
 
+
 string_code hashit (string const& inString) {
+    //segons la string que llegim retornem un valor de la enum per al switch
 	cout<<inString;
     if (inString == "anadir_individuo") return addIn;
     if (inString == "reproduccion_sexual") return reproduccion;
@@ -41,6 +42,7 @@ string_code hashit (string const& inString) {
 
 
 int main(){
+    //llegim la especie i inicialitzem el sistema
     especie esp;
     esp.llegir();
     poblacio pob;

@@ -30,8 +30,8 @@ public:
         parell_cromosomes();
 	
         /** @brief Constructora del parell de cromosomes
-        \pre C1 i c2 son cromosomes
-        \post Retornem un parell de cromosomes on c1 i c2 equivalen al P.I
+        \pre C1 i C2 son cromosomes
+        \post Retornem un parell de cromosomes on c1 i c2 equivalen al eqivalen a C1 i C2
         */
         parell_cromosomes(const vector<bool>&c1,const vector<bool>&c2);
 	
@@ -58,7 +58,7 @@ public:
 	//Lectura i escriptura
         /** @brief LLegim el parell de cromosomes
         \pre Al canal estandard d'entrada esta la sequencia de gens dels dos cromosomes
-        \post Cr1 i cr2 han quedat definits amb una llargada = P.I
+        \post Cr1 i cr2 han quedat definits amb una llargada = tam
         */
         void llegir(int tam);
         

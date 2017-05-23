@@ -1,3 +1,5 @@
+#joc de proves centrat en arbres geneologics
+
 3
 4 3 3 3 
 6 5
@@ -87,7 +89,7 @@ c1 d0 e0
 reproduccion_sexual
 b1 e0 e1
 1 1 1
-1 1 1  
+1 1 1  #reproducción entre antecesor lejano
 1 1 1
 1 1 1
 
@@ -103,9 +105,9 @@ X
 1 1 1
 
 anadir_individuo e1
-Y
+acabar      #sexo acabar, no posible en un juego de pruebas pero peta programas
 0 0 0 0 0 0
-0 0 0 0 1 
+0 0 0 0 1 0
 0 1 0
 1 1 0
 0 0 0
@@ -131,27 +133,27 @@ c1 d0 f1
 reproduccion_sexual 
 f1 e0 nemo
 1 0 1
-1 1 1 
+1 1 1 #reproduccion con padres iguales
 1 1 1
 1 1 1
 
-escribir_arbol_genealogico f0 
-escribir_arbol_genealogico nemo 
+escribir_arbol_genealogico f0 #escribir arbol genealogico de un individuo con intentos de reproduccion erroneos
+escribir_arbol_genealogico nemo #lo mismo
 
 completar_arbol_genealogico
-f0 c2 $ $ acabar $ $ 
+f0 c2 $ $ acabar $ $ #acabar el programa si no hay consumicion de datos 
 
 completar_arbol_genealogico
-$ 
+$ #arbol vacio, posibilidad de que no se compruebe si el primer individuo esta en el sistema y por lo tanto producir un Execution Error  al acceder a un iterador nulo
 
 completar_arbol_genealogico
-f0 e0 d0 b0 $ $ b1 $ $ c1 a0 $ $ a1 $ $ e1 $ $ 
+f0 e0 d0 b0 $ $ b1 $ $ c1 a0 $ $ a1 $ $ e1 $ $ #arbol completo, quizas hace mas llamadas recursivas y peta
 
 completar_arbol_genealogico
-f0 e0 d0 b0 a3 $ $ acabar $ $  b1 $ $ c1 a0 $ $ a1 $ $ e1 $ $  
+f0 e0 d0 b0 a3 $ $ acabar $ $  b1 $ $ c1 a0 $ $ a1 $ $ e1 $ $  #subarbol con mas elementos de los que tocan i un acabar
 
 completar_arbol_genealogico
-f0 $ $ 
+f0 $ $ #algo normalito
 
 escribir_poblacion 
 

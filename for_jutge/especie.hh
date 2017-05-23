@@ -42,7 +42,7 @@ public:
         
 	/** @brief Obtenir la llargada del cromosoma c_i
         \pre 0<i<N
-        \post El valor retornat es la llargada del cromosoma de posicio el P.I
+        \post El valor retornat es la llargada del cromosoma de posicio i
         */
 	int getl(int i) const;
 	

@@ -52,7 +52,7 @@ private:
 
     /** @brief Retorna cert si l'individu te pares ademés, la operacio es privada ja que treballem amb mapiteradors
         \pre Cert
-        \post Retornem cert si l'individu apuntat per el P.I te pares
+        \post Retornem cert si l'individu apuntat per el mapiterador A te pares
     */
     bool te_pares(mapiterator a);
 
@@ -87,8 +87,8 @@ public:
     //Modificadores
 
     /** @brief Afegim un individu al map sistema
-        \pre El parametre implicit es un individu que no esta a pob i el seu nom
-        \post El parametre implicit esta dintre de pob sense pares i amb el seu respectiu nom
+        \pre El nom correspon a un individu que no esta a pob 
+        \post El individu esta dintre de pob sense pares i amb nom = nom
     */
     void afegir_individu(string nom, const individu&ind);
 
@@ -136,7 +136,7 @@ public:
 
     /** @brief Escribim tots els elements per ordre alfabetic
         \pre Cert
-        \post El conjunt queda escrit al canal estandard de sortida per ordre alfabetic
+        \post Els individus del P.I han quedat escrits al canal estandard de sortida per ordre alfabetic
     */
     void escriure();
 
